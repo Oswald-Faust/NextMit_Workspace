@@ -6,7 +6,7 @@ class AppStrings {
 
   static const String onboardingTitle2 = "Un grand resto ou une soirée entre amis";
   static const String onboardingDesc2 = "n'importe où vous en avez envie sans la file";
-  static const String onboardingButton2 = "Pois!";
+  static const String onboardingButton2 = "Bois!";
 
   static const String onboardingTitle3 = "Le bonheur d'après le soir";
   static const String onboardingDesc3 = "après avoir fini l'intégralité du festival dans la joie, toute bonne est la fête";
