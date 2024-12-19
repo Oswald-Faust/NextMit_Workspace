@@ -1,0 +1,1920 @@
+{
+  message: 'MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 38573926,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+            at connectionFailureError (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongodb\src\cmap\connect.ts:493:14)
+            at Socket.<anonymous> (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongodb\src\cmap\connect.ts:394:16)
+            at Object.onceWrapper (node:events:634:26)
+            at Socket.emit (node:events:519:28)
+            at Socket.emit (node:domain:488:12)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          cause: AggregateError
+              at internalConnectMultiple (node:net:1114:18)
+              at afterConnectMultiple (node:net:1667:5) {
+            code: 'ECONNREFUSED',
+            [errors]: [
+              Error: connect ECONNREFUSED ::1:27017
+                  at createConnectionError (node:net:1634:14)
+                  at afterConnectMultiple (node:net:1664:40) {
+                errno: -4078,
+                code: 'ECONNREFUSED',
+                syscall: 'connect',
+                address: '::1',
+                port: 27017
+              },
+              Error: connect ECONNREFUSED 127.0.0.1:27017
+                  at createConnectionError (node:net:1634:14)
+                  at afterConnectMultiple (node:net:1664:40) {
+                errno: -4078,
+                code: 'ECONNREFUSED',
+                syscall: 'connect',
+                address: '127.0.0.1',
+                port: 27017
+              }
+            ]
+          },
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async connectDB (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\config\\database.ts:7:5)\n' +
+    '    at async startServer (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\server.ts:46:5)',
+  timestamp: '2024-12-08T09:35:05.525Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T09:41:24.348Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T09:41:24.376Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T09:42:51.516Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T09:42:51.537Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T09:43:24.201Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T09:43:24.221Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:37:30.517Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:00.597Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:00.623Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:31.180Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:31.193Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:51.379Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:41:51.409Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:43:31.756Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:43:31.774Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:47:30.953Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:47:36.211Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:48:28.108Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:49:03.028Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:50:11.872Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:50:11.899Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:50:16.956Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T10:51:57.184Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T10:51:57.200Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:01:03.328Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:01:03.365Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:178:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T11:01:47.986Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:06:39.516Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:06:39.535Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:14:07.848Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:14:07.869Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:18:49.693Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:18:49.720Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:26:24.460Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:26:24.495Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:30:40.988Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:30:41.015Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:35:36.108Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:35:36.146Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:35:54.889Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:35:54.909Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-08T11:36:24.798Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-08T11:36:24.823Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:17:30.189Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:17:30.202Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:22:27.598Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:22:27.632Z'
+}
+{
+  email: 'faustfrank370@gmail.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:22:51.739Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:25:03.723Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:25:03.743Z'
+}
+{
+  email: 'faustfrank370@gmail.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:25:36.896Z'
+}
+{
+  email: 'faustfrank370@gmail.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:26:43.305Z'
+}
+{
+  email: 'faustfrank370@gmail.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:26:47.468Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:47:56.128Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur non trouvé:',
+  timestamp: '2024-12-13T10:47:57.483Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:48:08.055Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur non trouvé:',
+  timestamp: '2024-12-13T10:48:08.253Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:48:52.121Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:48:52.226Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:50:22.541Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur non trouvé:',
+  timestamp: '2024-12-13T10:50:22.838Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:51:47.106Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T10:51:47.639Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:52:12.895Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T10:52:13.275Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:52:49.147Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:52:49.202Z'
+}
+{
+  level: 'debug',
+  message: 'Tentative de connexion pour:',
+  timestamp: '2024-12-13T10:53:12.052Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T10:53:12.447Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T10:58:15.537Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T10:58:15.568Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: '****',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T10:59:51.455Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T10:59:51.729Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe correct:',
+  timestamp: '2024-12-13T10:59:51.962Z'
+}
+{
+  email: 'admin@nextmit.co',
+  password: '****',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:00:27.607Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:00:28.395Z'
+}
+{
+  email: 'admin@nextmit.co',
+  password: '****',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:00:44.522Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:00:44.722Z'
+}
+{
+  email: 'admin@nextmit.coazefaze',
+  password: '****',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:00:49.551Z'
+}
+{
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:00:49.781Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:09:18.637Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:09:18.651Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:10:30.470Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:10:30.813Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:10:30.815Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:32:24.078Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:32:24.646Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:32:24.648Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:34:36.604Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:34:36.638Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:35:20.640Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:35:20.664Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:36:31.259Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:36:31.276Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:37:01.026Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:37:01.268Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:37:01.427Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:37:01.429Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:37:13.053Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:37:13.206Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:37:13.296Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:37:13.407Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:37:13.408Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:37:13.743Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:37:13.881Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:37:13.881Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:37:18.184Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:37:18.426Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:37:18.615Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:37:18.616Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:46:08.751Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:46:08.943Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:46:26.835Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:46:26.971Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:46:27.137Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:46:27.138Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:50:48.989Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-13T11:52:13.794Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-13T11:52:13.809Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:52:23.751Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:52:23.898Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:52:24.036Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:52:24.043Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:54:53.134Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:54:53.574Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:54:53.750Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:54:53.857Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:55:04.603Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:55:04.796Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:55:04.915Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:55:04.919Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024c',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:55:07.381Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:55:07.570Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:55:07.689Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T11:55:07.690Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:55:12.975Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:55:13.121Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:55:13.420Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:55:13.425Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:55:24.768Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:55:24.891Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:55:25.041Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:55:25.047Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:55:37.821Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:55:37.957Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:55:38.099Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:55:38.100Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:56:20.386Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:56:20.516Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:56:20.622Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:56:20.626Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T11:58:04.657Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T11:58:04.794Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T11:58:04.964Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T11:58:04.967Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:01:52.899Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:01:53.712Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:01:53.859Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:01:54.134Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:02:29.770Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:02:29.897Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:02:30.057Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:02:30.061Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024 ',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:03:07.701Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:03:07.822Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:03:07.966Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T12:03:07.967Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:03:28.188Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:03:28.305Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:03:28.412Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:03:28.624Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:06:26.916Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:06:27.696Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:06:27.896Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:06:27.954Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:06:47.644Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:06:47.866Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:06:48.035Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:06:48.047Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:07:10.447Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:07:10.586Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:07:10.707Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:07:10.713Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:10:04.232Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:10:04.428Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:10:04.659Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:10:04.690Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:12:55.039Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:12:55.634Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:12:55.753Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:12:55.815Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:12:59.904Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:13:00.065Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:13:00.370Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:13:00.377Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:13:07.380Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:13:07.517Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:13:07.738Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:13:07.741Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:15:03.039Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:15:03.622Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:15:03.791Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:15:03.927Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:15:36.476Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:15:36.673Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:15:36.812Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:15:36.815Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:15:40.670Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:15:40.813Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:15:41.006Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:15:41.010Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:18:22.750Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:18:23.254Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:18:23.413Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:18:23.484Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:18:59.107Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:18:59.289Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:18:59.436Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:18:59.471Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024f',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:19:04.300Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:19:04.430Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:19:04.696Z'
+}
+{
+  level: 'debug',
+  message: 'Mot de passe incorrect pour:',
+  timestamp: '2024-12-13T12:19:04.698Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:19:07.525Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:19:07.685Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:19:07.816Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:19:07.822Z'
+}
+{
+  email: 'admin@nextmit.com',
+  password: 'Admin@2024',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-13T12:41:48.196Z'
+}
+{
+  email: 'admin@nextmit.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-13T12:41:48.400Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-13T12:41:48.546Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-13T12:41:48.631Z'
+}
+{
+  stringValue: '"1"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '1',
+  path: '_id',
+  reason: BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new ObjectId (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\bson\src\objectid.ts:88:15)
+      at castObjectId (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schema\objectid.js:248:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+      at cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\cast.js:389:32)
+      at model.Query.Query.cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:4927:12)
+      at model.Query.Query._castConditions (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:2237:10)
+      at model.Query._findOne (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:2533:8)
+      at model.Query.exec (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:4447:28),
+  valueType: 'string',
+  model: Model { Event },
+  level: 'error',
+  message: `Erreur lors de la récupération de l'événement: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Event"`,
+  stack: 'CastError: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getEvent (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:49:19)',
+  timestamp: '2024-12-13T12:49:40.430Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T08:33:45.427Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T08:33:45.445Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T08:41:16.798Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T08:41:16.824Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T08:41:46.131Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T08:41:46.145Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T08:45:51.824Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T08:45:51.840Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:00:22.416Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:00:22.444Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:10:05.629Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:10:05.651Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:11:15.360Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:11:15.379Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:11:35.269Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:11:35.282Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:14:27.810Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:14:27.830Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:16:24.832Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:16:24.856Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:19:24.998Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:19:25.030Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:31:59.793Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:31:59.823Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:32:28.587Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:32:28.603Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:36:40.977Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:36:41.025Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:37:50.896Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:37:50.918Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:38:42.840Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:38:42.854Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:40:18.038Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:40:18.106Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:43:29.219Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:43:29.245Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:46:04.066Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:46:04.592Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:47:14.529Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:47:14.550Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:48:13.857Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:48:13.878Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T09:52:27.250Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T09:52:27.291Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:31:14.114Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:31:14.159Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:33:18.338Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:33:18.356Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:33:38.251Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:33:38.306Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:34:09.132Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:34:09.146Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:36:16.793Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:36:16.882Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:44:49.339Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:44:49.434Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T10:48:28.148Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T10:48:28.160Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T11:31:27.255Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T11:31:27.280Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T11:49:43.096Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T11:49:43.215Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T11:51:07.494Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T11:51:07.525Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T11:58:07.599Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T11:58:07.638Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T11:58:29.304Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T11:58:29.344Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T12:47:09.990Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T12:47:10.017Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T12:50:53.377Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T12:50:53.526Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T13:00:20.010Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T13:00:20.082Z'
+}
+{
+  email: 'faustfrank370@gmail.comx',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-16T13:10:51.536Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-16T13:10:52.773Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T14:44:01.057Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T14:44:01.073Z'
+}
+{
+  email: 'faustfrank370@gmail.comx',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-16T14:58:49.564Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-16T14:58:50.191Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-16T15:19:56.408Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-16T15:19:56.424Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T07:16:22.563Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T07:16:22.582Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T07:43:02.413Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T07:43:02.432Z'
+}

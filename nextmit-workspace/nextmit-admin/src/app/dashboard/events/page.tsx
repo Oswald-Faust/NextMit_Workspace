@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { eventService } from '@/services/event.service';
 import { Event, EventFilters } from '@/types/api';
-import { toast } from '@/components/ui/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 import { Plus, Search, Filter, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { EventForm } from '@/components/events/event-form';
-import { useToast } from '@/components/ui/toaster';
 
 export default function EventsPage() {
   const router = useRouter();
@@ -20,7 +19,7 @@ export default function EventsPage() {
   const [filters, setFilters] = useState<EventFilters>({});
   const [searchTerm, setSearchTerm] = useState('');
   const [showCreateDialog, setShowCreateDialog] = useState(false);
-  const { showToast } = useToast();
+  const { toast } = useToast();
 
   useEffect(() => {
     loadEvents();
@@ -33,10 +32,18 @@ export default function EventsPage() {
       if (response.success) {
         setEvents(response.data.items);
       } else {
-        showToast("Impossible de charger les événements", "error");
+        toast({
+          title: "Erreur",
+          description: "Impossible de charger les événements",
+          variant: "destructive",
+        });
       }
     } catch (error) {
-      showToast("Une erreur est survenue", "error");
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue",
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
     }

@@ -6,6 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { eventService } from '@/services/event.service';
 import { toast } from '@/components/ui/use-toast';
 import { Event } from '@/types/api';
+import { Upload, Loader2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 export function EventForm({ event, onSuccess }: { event?: Event; onSuccess: () => void }) {
   const [loading, setLoading] = useState(false);
@@ -29,7 +33,6 @@ export function EventForm({ event, onSuccess }: { event?: Event; onSuccess: () =
       setLoading(true);
       const formData = new FormData();
       
-      // Ajout des champs au FormData
       Object.keys(data).forEach(key => {
         if (key === 'image' && data[key][0]) {
           formData.append(key, data[key][0]);

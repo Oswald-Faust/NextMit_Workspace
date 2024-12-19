@@ -1,0 +1,238 @@
+{
+  message: 'MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) {
+      'localhost:27017' => ServerDescription {
+        address: 'localhost:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 38573926,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+            at connectionFailureError (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongodb\src\cmap\connect.ts:493:14)
+            at Socket.<anonymous> (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongodb\src\cmap\connect.ts:394:16)
+            at Object.onceWrapper (node:events:634:26)
+            at Socket.emit (node:events:519:28)
+            at Socket.emit (node:domain:488:12)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          cause: AggregateError
+              at internalConnectMultiple (node:net:1114:18)
+              at afterConnectMultiple (node:net:1667:5) {
+            code: 'ECONNREFUSED',
+            [errors]: [
+              Error: connect ECONNREFUSED ::1:27017
+                  at createConnectionError (node:net:1634:14)
+                  at afterConnectMultiple (node:net:1664:40) {
+                errno: -4078,
+                code: 'ECONNREFUSED',
+                syscall: 'connect',
+                address: '::1',
+                port: 27017
+              },
+              Error: connect ECONNREFUSED 127.0.0.1:27017
+                  at createConnectionError (node:net:1634:14)
+                  at afterConnectMultiple (node:net:1664:40) {
+                errno: -4078,
+                code: 'ECONNREFUSED',
+                syscall: 'connect',
+                address: '127.0.0.1',
+                port: 27017
+              }
+            ]
+          },
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async connectDB (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\config\\database.ts:7:5)\n' +
+    '    at async startServer (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\server.ts:46:5)',
+  timestamp: '2024-12-08T09:35:05.525Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:37:30.517Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:47:30.953Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:47:36.211Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:48:28.108Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:49:03.028Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:179:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T10:50:16.956Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  level: 'error',
+  message: "Error 🔥 Format d'email invalide",
+  stack: "Error: Format d'email invalide\n" +
+    '    at validateResults (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\validate.ts:178:11)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at middleware (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2024-12-08T11:01:47.986Z'
+}
+{
+  stringValue: `"{ email: 'faustfrank370@gmail.com', password: 'writer55' }"`,
+  messageFormat: undefined,
+  kind: 'string',
+  value: { email: 'faustfrank370@gmail.com', password: 'writer55' },
+  path: 'email',
+  reason: null,
+  valueType: 'Object',
+  model: Model { User },
+  level: 'error',
+  message: `Erreur lors de la connexion: Cast to string failed for value "{ email: 'faustfrank370@gmail.com', password: 'writer55' }" (type Object) at path "email" for model "User"`,
+  stack: `CastError: Cast to string failed for value "{ email: 'faustfrank370@gmail.com', password: 'writer55' }" (type Object) at path "email" for model "User"\n` +
+    '    at SchemaString.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\string.js:606:11)\n' +
+    '    at model.Query.<anonymous> (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\string.js:289:16)\n' +
+    '    at SchemaString.SchemaType._applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1189:20)\n' +
+    '    at SchemaString.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1214:16)\n' +
+    '    at SchemaString.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\string.js:691:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:318:34)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)',
+  timestamp: '2024-12-13T10:22:51.765Z'
+}
+{
+  stringValue: '"1"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '1',
+  path: '_id',
+  reason: BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+      at new ObjectId (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\bson\src\objectid.ts:88:15)
+      at castObjectId (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schema\objectid.js:248:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+      at ObjectId.SchemaType.castForQuery (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+      at cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\cast.js:389:32)
+      at model.Query.Query.cast (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:4927:12)
+      at model.Query.Query._castConditions (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:2237:10)
+      at model.Query._findOne (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:2533:8)
+      at model.Query.exec (C:\Users\Oswald Faust\nextmit_app\nextmit-workspace\nextmit-backend\node_modules\mongoose\lib\query.js:4447:28),
+  valueType: 'string',
+  model: Model { Event },
+  level: 'error',
+  message: `Erreur lors de la récupération de l'événement: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Event"`,
+  stack: 'CastError: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async getEvent (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:49:19)',
+  timestamp: '2024-12-13T12:49:40.430Z'
+}

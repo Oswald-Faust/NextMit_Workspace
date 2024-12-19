@@ -1,122 +1,90 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Schema, Document, Types } from 'mongoose';
 
 export interface IEvent extends Document {
-  name: string;
+  title: string;
   description: string;
-  type: string;
-  location: string;
-  startDate: Date;
-  endDate: Date;
-  price: number;
+  date: Date;
+  location: {
+    address: string;
+    city: string;
+    coordinates?: [number, number];
+  };
+  image?: string;
+  organizer: Types.ObjectId;
+  vendors: Types.ObjectId[];
+  advertisements: Types.ObjectId[];
   capacity: number;
-  imageUrl: string;
+  price: number;
+  category: string;
   status: 'draft' | 'published' | 'cancelled';
-  tickets: {
-    type: string;
-    price: number;
-    quantity: number;
-    sold: number;
-  }[];
-  organizer: mongoose.Types.ObjectId;
-  participants: mongoose.Types.ObjectId[];
   createdAt: Date;
   updatedAt: Date;
 }
 
-const eventSchema = new Schema<IEvent>({
-  name: {
+const eventSchema = new Schema({
+  title: {
     type: String,
-    required: [true, 'Le nom est requis'],
-    trim: true,
+    required: true,
+    trim: true
   },
   description: {
     type: String,
-    required: [true, 'La description est requise'],
+    required: true
   },
-  type: {
-    type: String,
-    required: [true, 'Le type est requis'],
-    enum: ['food', 'drink', 'music', 'art', 'other'],
+  date: {
+    type: Date,
+    required: true
   },
   location: {
-    type: String,
-    required: [true, 'Le lieu est requis'],
+    address: {
+      type: String,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: false
+    }
   },
-  startDate: {
-    type: Date,
-    required: [true, 'La date de début est requise'],
+  image: {
+    type: String
   },
-  endDate: {
-    type: Date,
-    required: [true, 'La date de fin est requise'],
+  organizer: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  vendors: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Vendor'
+  }],
+  advertisements: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Advertisement'
+  }],
+  capacity: {
+    type: Number,
+    required: true
   },
   price: {
     type: Number,
-    required: [true, 'Le prix est requis'],
-    min: [0, 'Le prix ne peut pas être négatif'],
+    required: true
   },
-  capacity: {
-    type: Number,
-    required: [true, 'La capacité est requise'],
-    min: [1, 'La capacité doit être d\'au moins 1'],
-  },
-  imageUrl: {
+  category: {
     type: String,
-    required: [true, 'L\'image est requise'],
+    required: true
   },
   status: {
     type: String,
     enum: ['draft', 'published', 'cancelled'],
-    default: 'draft',
-  },
-  tickets: [{
-    type: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-      min: 0,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-      min: 0,
-    },
-    sold: {
-      type: Number,
-      default: 0,
-      min: 0,
-    },
-  }],
-  organizer: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  participants: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-  }],
+    default: 'draft'
+  }
 }, {
-  timestamps: true,
-});
-
-// Index pour la recherche
-eventSchema.index({ name: 'text', description: 'text' });
-
-// Index pour le filtrage par date
-eventSchema.index({ startDate: 1, endDate: 1 });
-
-// Méthodes virtuelles
-eventSchema.virtual('isLive').get(function() {
-  const now = new Date();
-  return now >= this.startDate && now <= this.endDate;
-});
-
-eventSchema.virtual('remainingCapacity').get(function() {
-  return this.capacity - this.participants.length;
+  timestamps: true
 });
 
 export const Event = mongoose.model<IEvent>('Event', eventSchema); 
+//export const User = mongoose.model<IUser>('User', UserSchema); 

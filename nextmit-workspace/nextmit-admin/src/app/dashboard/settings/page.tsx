@@ -1,157 +1,323 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { useAuth } from '@/contexts/auth.context';
+import { authService } from '@/services/auth.service';
 import { Card } from '@/components/ui/card';
-import { Bell, Lock, Globe, Palette, Mail } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
+import { useToast } from '@/components/ui/use-toast';
+import { Bell, Lock, Globe, Palette, Mail, Loader2 } from 'lucide-react';
 
-const sections = [
-  {
-    title: 'Profil',
-    description: 'Gérez vos informations personnelles et vos préférences.',
-    icon: Lock,
-    fields: [
-      { label: 'Nom', type: 'text', value: 'Admin' },
-      { label: 'Email', type: 'email', value: 'admin@nextmit.com' },
-      { label: 'Téléphone', type: 'tel', value: '+33 6 12 34 56 78' },
-    ],
-  },
-  {
-    title: 'Notifications',
-    description: 'Configurez vos préférences de notifications.',
-    icon: Bell,
-    settings: [
-      { label: 'Notifications par email', type: 'toggle', value: true },
-      { label: 'Notifications push', type: 'toggle', value: true },
-      { label: 'Résumé hebdomadaire', type: 'toggle', value: false },
-    ],
-  },
-  {
-    title: 'Apparence',
-    description: 'Personnalisez l\'apparence de votre tableau de bord.',
-    icon: Palette,
-    settings: [
-      { label: 'Thème sombre', type: 'toggle', value: false },
-      { label: 'Contraste élevé', type: 'toggle', value: false },
-    ],
-  },
-  {
-    title: 'Langue et région',
-    description: 'Définissez vos préférences régionales.',
-    icon: Globe,
-    settings: [
-      {
-        label: 'Langue',
-        type: 'select',
-        value: 'fr',
-        options: [
-          { value: 'fr', label: 'Français' },
-          { value: 'en', label: 'English' },
-        ],
-      },
-      {
-        label: 'Fuseau horaire',
-        type: 'select',
-        value: 'Europe/Paris',
-        options: [
-          { value: 'Europe/Paris', label: 'Paris (UTC+1)' },
-          { value: 'Europe/London', label: 'London (UTC)' },
-        ],
-      },
-    ],
-  },
-];
+type NotificationSettings = {
+  email: boolean;
+  push: boolean;
+  weekly: boolean;
+};
+
+type AppearanceSettings = {
+  theme: 'light' | 'dark' | 'system';
+  fontSize: 'small' | 'medium' | 'large';
+};
+
+type LanguageSettings = {
+  language: 'fr' | 'en' | 'es';
+};
 
 export default function SettingsPage() {
+  const { user, updateUser } = useAuth();
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(true);
+  
+  const [profile, setProfile] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    avatar: '',
+  });
+
+  const [notifications, setNotifications] = useState<NotificationSettings>({
+    email: true,
+    push: true,
+    weekly: false,
+  });
+
+  const [appearance, setAppearance] = useState<AppearanceSettings>({
+    theme: 'system',
+    fontSize: 'medium',
+  });
+
+  const [language, setLanguage] = useState<LanguageSettings>({
+    language: 'fr',
+  });
+
+  useEffect(() => {
+    loadUserProfile();
+  }, []);
+
+  const loadUserProfile = async () => {
+    try {
+      setLoading(true);
+      const userData = await authService.getCurrentUser();
+      if (userData) {
+        setProfile({
+          firstName: userData.firstName || '',
+          lastName: userData.lastName || '',
+          email: userData.email || '',
+          phone: userData.phone || '',
+          avatar: userData.avatar || '',
+        });
+        
+        // Charger les préférences sauvegardées si elles existent
+        if (userData.preferences) {
+          setNotifications(userData.preferences.notifications || notifications);
+          setAppearance(userData.preferences.appearance || appearance);
+          setLanguage(userData.preferences.language || language);
+        }
+      }
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Impossible de charger les informations du profil",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleProfileUpdate = async () => {
+    try {
+      setLoading(true);
+      const updatedUser = await authService.updateProfile({
+        ...profile,
+        preferences: {
+          notifications,
+          appearance,
+          language,
+        },
+      });
+
+      if (updateUser) {
+        updateUser(updatedUser);
+      }
+
+      toast({
+        title: "Succès",
+        description: "Profil mis à jour avec succès",
+      });
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Impossible de mettre à jour le profil",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleNotificationChange = (key: keyof NotificationSettings) => {
+    setNotifications(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const handleThemeChange = (theme: AppearanceSettings['theme']) => {
+    setAppearance(prev => ({ ...prev, theme }));
+    // Appliquer le thème
+    document.documentElement.className = theme === 'dark' ? 'dark' : '';
+    localStorage.setItem('theme', theme);
+  };
+
+  const handleLanguageChange = (language: LanguageSettings['language']) => {
+    setLanguage({ language });
+    // Implémenter le changement de langue ici
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
-        Paramètres
-      </h1>
+      {/* Section Profil */}
+      <Card className="p-6">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Lock className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-lg font-medium">Profil</h2>
+            <p className="text-sm text-gray-500">
+              Gérez vos informations personnelles
+            </p>
+          </div>
+        </div>
 
-      <div className="grid gap-6">
-        {sections.map((section) => (
-          <Card key={section.title} className="p-6">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <section.icon className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h2 className="text-lg font-medium text-gray-900 dark:text-white">
-                  {section.title}
-                </h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {section.description}
-                </p>
-              </div>
+        <div className="grid gap-4">
+          {profile.avatar && (
+            <div className="flex items-center space-x-4">
+              <img
+                src={profile.avatar}
+                alt="Avatar"
+                className="h-16 w-16 rounded-full object-cover"
+              />
+              <Button variant="outline">Changer l'avatar</Button>
             </div>
+          )}
 
-            <div className="space-y-4">
-              {section.fields?.map((field) => (
-                <div key={field.label} className="grid grid-cols-3 gap-4 items-center">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {field.label}
-                  </label>
-                  <input
-                    type={field.type}
-                    defaultValue={field.value}
-                    className="col-span-2 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
-                </div>
-              ))}
-
-              {section.settings?.map((setting) => (
-                <div key={setting.label} className="flex items-center justify-between">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {setting.label}
-                  </label>
-                  {setting.type === 'toggle' ? (
-                    <button
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full ${
-                        setting.value ? 'bg-primary' : 'bg-gray-200 dark:bg-gray-700'
-                      }`}
-                    >
-                      <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
-                          setting.value ? 'translate-x-6' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                  ) : setting.type === 'select' ? (
-                    <select className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent">
-                      {setting.options?.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </Card>
-        ))}
-
-        <Card className="p-6 bg-red-50 dark:bg-red-900/10">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="p-2 bg-red-100 dark:bg-red-900/20 rounded-lg">
-              <Mail className="w-5 h-5 text-red-600 dark:text-red-400" />
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm font-medium">Prénom</label>
+              <Input
+                value={profile.firstName}
+                onChange={(e) => setProfile(prev => ({ ...prev, firstName: e.target.value }))}
+                placeholder="Votre prénom"
+              />
             </div>
             <div>
-              <h2 className="text-lg font-medium text-red-600 dark:text-red-400">
-                Zone de danger
-              </h2>
-              <p className="text-sm text-red-600/90 dark:text-red-400/90">
-                Ces actions sont irréversibles.
-              </p>
+              <label className="text-sm font-medium">Nom</label>
+              <Input
+                value={profile.lastName}
+                onChange={(e) => setProfile(prev => ({ ...prev, lastName: e.target.value }))}
+                placeholder="Votre nom"
+              />
             </div>
           </div>
 
-          <div className="space-y-4">
-            <button className="w-full px-4 py-2 border border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors">
-              Supprimer mon compte
-            </button>
+          <div>
+            <label className="text-sm font-medium">Email</label>
+            <Input
+              type="email"
+              value={profile.email}
+              onChange={(e) => setProfile(prev => ({ ...prev, email: e.target.value }))}
+              placeholder="votre@email.com"
+            />
           </div>
-        </Card>
-      </div>
+
+          <div>
+            <label className="text-sm font-medium">Téléphone</label>
+            <Input
+              type="tel"
+              value={profile.phone}
+              onChange={(e) => setProfile(prev => ({ ...prev, phone: e.target.value }))}
+              placeholder="+33 6 12 34 56 78"
+            />
+          </div>
+
+          <Button 
+            onClick={handleProfileUpdate}
+            disabled={loading}
+          >
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Sauvegarder les modifications
+          </Button>
+        </div>
+      </Card>
+
+      {/* Section Notifications */}
+      <Card className="p-6">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Bell className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-lg font-medium">Notifications</h2>
+            <p className="text-sm text-gray-500">
+              Gérez vos préférences de notifications
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          {Object.entries(notifications).map(([key, value]) => (
+            <div key={key} className="flex items-center justify-between">
+              <label className="text-sm font-medium">
+                {key === 'email' ? 'Notifications par email' :
+                 key === 'push' ? 'Notifications push' :
+                 'Résumé hebdomadaire'}
+              </label>
+              <Switch
+                checked={value}
+                onCheckedChange={() => handleNotificationChange(key as keyof NotificationSettings)}
+              />
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* Section Apparence */}
+      <Card className="p-6">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Palette className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-lg font-medium">Apparence</h2>
+            <p className="text-sm text-gray-500">
+              Personnalisez l'apparence de l'application
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <label className="text-sm font-medium">Thème</label>
+            <div className="grid grid-cols-3 gap-4 mt-2">
+              {['light', 'dark', 'system'].map((theme) => (
+                <Button
+                  key={theme}
+                  variant={appearance.theme === theme ? 'default' : 'outline'}
+                  onClick={() => handleThemeChange(theme as AppearanceSettings['theme'])}
+                >
+                  {theme.charAt(0).toUpperCase() + theme.slice(1)}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      {/* Section Langue */}
+      <Card className="p-6">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Globe className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-lg font-medium">Langue</h2>
+            <p className="text-sm text-gray-500">
+              Choisissez la langue de l'interface
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { code: 'fr', label: 'Français' },
+              { code: 'en', label: 'English' },
+              { code: 'es', label: 'Español' }
+            ].map((lang) => (
+              <Button
+                key={lang.code}
+                variant={language.language === lang.code ? 'default' : 'outline'}
+                onClick={() => handleLanguageChange(lang.code as LanguageSettings['language'])}
+              >
+                {lang.label}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </Card>
     </div>
   );
 } 

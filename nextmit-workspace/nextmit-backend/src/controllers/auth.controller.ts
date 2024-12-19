@@ -1,20 +1,31 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../models/User';
+import { User, IUser } from '../models/User';
+import { AuthService } from '../services/auth.service';
+//import { EmailService } from '../services/email.service';
+import { catchAsync } from '../utils/catchAsync';
 import { AppError } from '../middleware/error';
 import { logger } from '../config/logger';
 import { config } from '../config';
 
-const generateToken = (userId: string, role: string): string => {
-  return jwt.sign(
-    { userId, role },
-    process.env.JWT_SECRET!,
-    { expiresIn: process.env.JWT_EXPIRE || '24h' }
-  );
-};
+export class AuthController {
+  private authService: AuthService;
+  //private emailService: EmailService;
 
-export const register = async (req: Request, res: Response) => {
-  try {
+  constructor() {
+    this.authService = new AuthService();
+   // this.emailService = new EmailService();
+  }
+
+  private generateToken(userId: string, role: string): string {
+    return jwt.sign(
+      { userId, role },
+      config.jwtSecret,
+      { expiresIn: '24h' }
+    );
+  }
+
+  register = catchAsync(async (req: Request, res: Response) => {
     const { firstName, lastName, email, password, phone } = req.body;
 
     // Vérifier si l'utilisateur existe déjà
@@ -33,7 +44,7 @@ export const register = async (req: Request, res: Response) => {
     });
 
     // Générer le token
-    const token = generateToken(user._id, user.role);
+    const token = this.generateToken(user._id, user.role);
 
     res.status(201).json({
       success: true,
@@ -47,39 +58,24 @@ export const register = async (req: Request, res: Response) => {
         role: user.role,
       },
     });
-  } catch (error) {
-    logger.error('Erreur lors de l\'inscription:', error);
-    if (error instanceof AppError) {
-      throw error;
-    }
-    throw new AppError('Erreur lors de l\'inscription', 500);
-  }
-};
-export const login = async (req: Request, res: Response) => {
-  try {
-    // Destructurer directement req.body
+  });
+
+  login = catchAsync(async (req: Request, res: Response) => {
     const { email, password } = req.body;
     
-    logger.debug('Tentative de connexion pour:', email);
+    logger.debug('Données reçues:', { email, password });
 
     // Validation basique
     if (!email || !password) {
+      logger.debug('Données manquantes:', { email: !!email, password: !!password });
       return res.status(400).json({
         success: false,
         message: 'Email et mot de passe requis'
       });
     }
 
-    // Vérifier que l'email est une chaîne de caractères
-    if (typeof email !== 'string' || typeof password !== 'string') {
-      return res.status(400).json({
-        success: false,
-        message: 'Format invalide pour email ou mot de passe'
-      });
-    }
-
     // Trouver l'utilisateur
-    const user = await User.findOne({ email: email.toLowerCase() }).select('+password');
+    const user = await User.findOne({ email }).select('+password');
     
     if (!user) {
       logger.debug('Utilisateur non trouvé:', email);
@@ -100,7 +96,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // Générer le token
-    const token = generateToken(user._id, user.role);
+    const token = this.generateToken(user._id, user.role);
 
     logger.debug('Connexion réussie pour:', email);
 
@@ -115,14 +111,9 @@ export const login = async (req: Request, res: Response) => {
         role: user.role,
       }
     });
-  } catch (error) {
-    logger.error('Erreur lors de la connexion:', error);
-    throw new AppError('Erreur lors de la connexion', 500);
-  }
-};
+  });
 
-export const getMe = async (req: Request, res: Response) => {
-  try {
+  getMe = catchAsync(async (req: Request, res: Response) => {
     const user = await User.findById(req.user.id);
     if (!user) {
       throw new AppError('Utilisateur non trouvé', 404);
@@ -132,17 +123,9 @@ export const getMe = async (req: Request, res: Response) => {
       success: true,
       data: user,
     });
-  } catch (error) {
-    logger.error('Erreur lors de la récupération du profil:', error);
-    if (error instanceof AppError) {
-      throw error;
-    }
-    throw new AppError('Erreur lors de la récupération du profil', 500);
-  }
-};
+  });
 
-export const updateProfile = async (req: Request, res: Response) => {
-  try {
+  updateProfile = catchAsync(async (req: Request, res: Response) => {
     const { firstName, lastName, phone } = req.body;
 
     const user = await User.findByIdAndUpdate(
@@ -159,17 +142,9 @@ export const updateProfile = async (req: Request, res: Response) => {
       success: true,
       data: user,
     });
-  } catch (error) {
-    logger.error('Erreur lors de la mise à jour du profil:', error);
-    if (error instanceof AppError) {
-      throw error;
-    }
-    throw new AppError('Erreur lors de la mise à jour du profil', 500);
-  }
-};
+  });
 
-export const updatePassword = async (req: Request, res: Response) => {
-  try {
+  updatePassword = catchAsync(async (req: Request, res: Response) => {
     const { currentPassword, newPassword } = req.body;
 
     const user = await User.findById(req.user.id).select('+password');
@@ -177,28 +152,109 @@ export const updatePassword = async (req: Request, res: Response) => {
       throw new AppError('Utilisateur non trouvé', 404);
     }
 
-    // Vérifier le mot de passe actuel
     const isMatch = await user.comparePassword(currentPassword);
     if (!isMatch) {
       throw new AppError('Mot de passe actuel incorrect', 401);
     }
 
-    // Mettre à jour le mot de passe
     user.password = newPassword;
     await user.save();
 
-    // Générer un nouveau token
-    const token = generateToken(user._id, user.role);
+    const token = this.generateToken(user._id, user.role);
 
     res.status(200).json({
       success: true,
       token,
     });
-  } catch (error) {
-    logger.error('Erreur lors de la mise à jour du mot de passe:', error);
-    if (error instanceof AppError) {
-      throw error;
+  });
+
+  refreshToken = catchAsync(async (req: Request, res: Response) => {
+    const { refreshToken } = req.body;
+    
+    if (!refreshToken) {
+      throw new AppError('Refresh token requis', 400);
     }
-    throw new AppError('Erreur lors de la mise à jour du mot de passe', 500);
-  }
-}; 
+
+    const tokens = await this.authService.refreshAuth(refreshToken);
+
+    res.json({
+      success: true,
+      data: { tokens }
+    });
+  });
+
+  logout = catchAsync(async (req: Request, res: Response) => {
+    // Si vous utilisez des tokens de rafraîchissement stockés en base de données
+    // vous pouvez les invalider ici
+    
+    res.status(200).json({
+      success: true,
+      message: 'Déconnexion réussie'
+    });
+  });
+
+  forgotPassword = catchAsync(async (req: Request, res: Response) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      throw new AppError('Aucun utilisateur trouvé avec cet email', 404);
+    }
+
+    // Générer un token de réinitialisation
+    const resetToken = this.authService.generateVerificationToken(user);
+    
+    // Envoyer l'email
+  //  await this.emailService.sendResetPasswordEmail(user.email, resetToken);
+
+    res.status(200).json({
+      success: true,
+      message: 'Email de réinitialisation envoyé'
+    });
+  });
+
+  resetPassword = catchAsync(async (req: Request, res: Response) => {
+    const { token, password } = req.body;
+
+    // Vérifier le token et obtenir l'utilisateur
+    const decoded = jwt.verify(token, config.jwtSecret) as { sub: string };
+    const user = await User.findById(decoded.sub);
+
+    if (!user) {
+      throw new AppError('Token invalide ou expiré', 400);
+    }
+
+    // Mettre à jour le mot de passe
+    user.password = password;
+    await user.save();
+
+    // Générer de nouveaux tokens
+    const newToken = this.generateToken(user._id, user.role);
+
+    res.json({
+      success: true,
+      token: newToken
+    });
+  });
+
+  verifyEmail = catchAsync(async (req: Request, res: Response) => {
+    const { token } = req.body;
+
+    // Vérifier le token et obtenir l'utilisateur
+    const decoded = jwt.verify(token, config.jwtSecret) as { sub: string };
+    const user = await User.findById(decoded.sub);
+
+    if (!user) {
+      throw new AppError('Token invalide ou expiré', 400);
+    }
+
+    // Marquer l'email comme vérifié
+    user.isVerified = true;
+    await user.save();
+
+    res.json({
+      success: true,
+      message: 'Email vérifié avec succès'
+    });
+  });
+} 

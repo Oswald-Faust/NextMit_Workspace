@@ -1,47 +1,61 @@
 import { Router } from 'express';
-import {
-  getEvents,
-  getEvent,
-  createEvent,
-  updateEvent,
-  deleteEvent,
-  getEventTickets,
-  bookTicket,
-} from '../controllers/event.controller';
-import { protect, authorize } from '../middleware/auth';
-import { validateCreateEvent, validateUpdateEvent } from '../middleware/validate';
-import { uploadEventImage } from '../middleware/upload';
+import { EventController } from '../controllers/event.controller';
+import { auth } from '../middleware/auth';
+import { eventValidation } from '../validations/event.validation';
+import { upload } from '../middleware/upload';
 
 const router = Router();
+const controller = new EventController();
 
 // Routes publiques
-router.get('/', getEvents);
-router.get('/:id', getEvent);
+router.get('/', eventValidation.getEvents, controller.getEvents);
+router.get('/:eventId', eventValidation.getEvent, controller.getEvent);
 
-// Routes protégées
-router.use(protect);
-
-// Routes pour les organisateurs
+// Routes protégées (manager/admin)
 router.post(
   '/',
-  authorize('admin', 'organizer'),
-  uploadEventImage,
-  validateCreateEvent,
-  createEvent
+  auth(['admin', 'manager']),
+  upload.single('image'),
+  eventValidation.createEvent,
+  controller.createEvent
 );
 
-router.put(
-  '/:id',
-  authorize('admin', 'organizer'),
-  uploadEventImage,
-  validateUpdateEvent,
-  updateEvent
+router.patch(
+  '/:eventId',
+  auth(['admin', 'manager']),
+  upload.single('image'),
+  eventValidation.updateEvent,
+  controller.updateEvent
 );
 
-router.delete('/:id', authorize('admin', 'organizer'), deleteEvent);
+router.delete(
+  '/:eventId',
+  auth(['admin', 'manager']),
+  eventValidation.deleteEvent,
+  controller.deleteEvent
+);
 
-// Routes pour les tickets
-router.get('/:id/tickets', getEventTickets);
-router.post('/:id/book', bookTicket);
+// Gestion des vendeurs de l'événement
+router.post(
+  '/:eventId/vendors',
+  auth(['admin', 'manager']),
+  eventValidation.addVendor,
+  controller.addVendor
+);
+
+router.delete(
+  '/:eventId/vendors/:vendorId',
+  auth(['admin', 'manager']),
+  eventValidation.removeVendor,
+  controller.removeVendor
+);
+
+// Gestion des publicités
+router.post(
+  '/:eventId/advertisements',
+  auth(['admin', 'manager']),
+  eventValidation.addAdvertisement,
+  controller.addAdvertisement
+);
 
 export default router; 

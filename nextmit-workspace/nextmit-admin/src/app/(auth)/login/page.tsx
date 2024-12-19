@@ -8,39 +8,40 @@ import * as z from 'zod';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { authService } from '@/services/auth.service';
+import { useAuth } from "@/contexts/auth.context";
+import { useToast } from "@/components/ui/use-toast";
 
-const loginSchema = z.object({
-  email: z.string().email('Email invalide'),
-  password: z.string().min(8, 'Le mot de passe doit contenir au moins 8 caractères'),
+const formSchema = z.object({
+  email: z.string().email("Email invalide"),
+  password: z.string().min(6, "Le mot de passe doit contenir au moins 6 caractères"),
 });
-
-type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
   const router = useRouter();
+  const { login } = useAuth();
+  const { toast } = useToast();
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
-  });
-
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
       setLoading(true);
-      setError(null);
-      const response = await authService.login(data);
-      if (response.success) {
-        router.push('/dashboard');
-      }
-    } catch (err: any) {
-      setError(err.message || 'Une erreur est survenue lors de la connexion');
-    } finally {
+      await login(data.email, data.password);
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Erreur de connexion",
+        description: error instanceof Error ? error.message : "Une erreur est survenue",
+      });
       setLoading(false);
     }
   };
@@ -59,7 +60,7 @@ export default function LoginPage() {
           </h2>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="mt-8 space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
           <div className="rounded-md shadow-sm space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium mb-1">
@@ -69,10 +70,10 @@ export default function LoginPage() {
                 id="email"
                 type="email"
                 autoComplete="email"
-                {...register('email')}
+                {...form.register('email')}
               />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+              {form.formState.errors.email && (
+                <p className="mt-1 text-sm text-red-500">{form.formState.errors.email.message}</p>
               )}
             </div>
 
@@ -84,11 +85,11 @@ export default function LoginPage() {
                 id="password"
                 type="password"
                 autoComplete="current-password"
-                {...register('password')}
+                {...form.register('password')}
               />
-              {errors.password && (
+              {form.formState.errors.password && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.password.message}
+                  {form.formState.errors.password.message}
                 </p>
               )}
             </div>

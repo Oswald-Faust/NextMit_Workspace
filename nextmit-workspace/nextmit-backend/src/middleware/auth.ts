@@ -1,13 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { config } from '../config';
 import { User } from '../models/User';
-import { logger } from '../config/logger';
-import { AppError } from './error';
-
-interface JwtPayload {
-  userId: string;
-  role: string;
-}
+import { ApiError } from '../utils/ApiError';
 
 declare global {
   namespace Express {
@@ -17,45 +12,38 @@ declare global {
   }
 }
 
-export const protect = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  try {
-    let token;
+export const auth = (allowedRoles: string[] = []) => {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      let token: string | undefined;
 
-    if (req.headers.authorization?.startsWith('Bearer')) {
-      token = req.headers.authorization.split(' ')[1];
+      if (req.headers.authorization?.startsWith('Bearer')) {
+        token = req.headers.authorization.split(' ')[1];
+      }
+
+      if (!token) {
+        throw new ApiError(401, 'Accès non autorisé. Token manquant');
+      }
+
+      try {
+        const decoded = jwt.verify(token, config.jwt.secret) as any;
+        const user = await User.findById(decoded.id).select('-password');
+
+        if (!user) {
+          throw new ApiError(401, 'Token invalide ou expiré');
+        }
+
+        if (allowedRoles.length > 0 && !allowedRoles.includes(user.role)) {
+          throw new ApiError(403, 'Vous n\'avez pas les droits nécessaires pour accéder à cette ressource');
+        }
+
+        req.user = user;
+        next();
+      } catch (error) {
+        throw new ApiError(401, 'Token invalide ou expiré');
+      }
+    } catch (error) {
+      next(error);
     }
-
-    if (!token) {
-      next(new AppError('Non autorisé à accéder à cette route', 401));
-      return;
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
-    const user = await User.findById(decoded.userId).select('-password');
-
-    if (!user) {
-      next(new AppError('Utilisateur non trouvé', 401));
-      return;
-    }
-
-    req.user = user;
-    next();
-  } catch (error) {
-    logger.error('Erreur d\'authentification:', error);
-    next(new AppError('Non autorisé à accéder à cette route', 401));
-  }
-};
-
-export const authorize = (...roles: string[]) => {
-  return (req: Request, res: Response, next: NextFunction): void => {
-    if (!roles.includes(req.user.role)) {
-      next(new AppError(`Le rôle ${req.user.role} n'est pas autorisé à accéder à cette route`, 403));
-      return;
-    }
-    next();
   };
 }; 
