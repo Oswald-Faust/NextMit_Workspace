@@ -236,3 +236,40 @@
     '    at async getEvent (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:49:19)',
   timestamp: '2024-12-13T12:49:40.430Z'
 }
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-26T02:25:10.580Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-26T02:26:27.769Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Error 🔥 Cet email est déjà utilisé',
+  stack: 'Error: Cet email est déjà utilisé\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\auth.controller.ts:34:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-26T02:29:46.189Z'
+}

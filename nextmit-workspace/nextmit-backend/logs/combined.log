@@ -1918,3 +1918,574 @@
   level: 'info',
   timestamp: '2024-12-19T07:43:02.432Z'
 }
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T10:38:35.221Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T10:38:35.240Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T10:57:06.291Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T10:57:06.315Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T10:57:55.015Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T10:57:55.026Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T11:44:28.632Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T11:44:28.644Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T12:06:12.868Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T12:06:12.888Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T12:53:33.123Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T12:53:33.190Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T12:59:19.397Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T12:59:19.422Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T13:00:01.123Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T13:00:01.142Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-19T13:28:08.275Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-19T13:28:08.294Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:21:07.540Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:21:07.555Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:38:07.966Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:38:07.980Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:39:34.677Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:39:34.691Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:41:59.053Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:41:59.080Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:47:55.010Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:47:55.110Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T16:49:57.219Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T16:49:57.296Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T17:05:43.383Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T17:05:43.408Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T17:16:22.004Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T17:16:22.021Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T17:18:35.755Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T17:18:35.772Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-25T17:59:27.923Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-25T17:59:27.941Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:33:18.712Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:33:18.726Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:42:51.585Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:42:51.609Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:43:18.556Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:43:18.570Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:43:47.369Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:43:47.385Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:47:09.366Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:47:09.398Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:48:48.422Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:48:48.436Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:53:16.647Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:53:19.191Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:53:19.198Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:55:53.036Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:55:55.795Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:55:55.800Z'
+}
+{
+  message: 'Requête reçue de ::1 : GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T01:56:06.287Z'
+}
+{
+  host: 'localhost:5000',
+  'user-agent': 'curl/7.55.1',
+  accept: '*/*',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T01:56:06.288Z'
+}
+{
+  message: 'Requête reçue: GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T01:56:06.290Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:57:15.826Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T01:57:18.343Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T01:57:18.349Z'
+}
+{
+  message: 'Requête reçue de ::1 : GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T01:57:32.860Z'
+}
+{
+  host: 'localhost:5000',
+  'user-agent': 'curl/7.55.1',
+  accept: '*/*',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T01:57:32.861Z'
+}
+{
+  message: 'Requête reçue: GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T01:57:32.863Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:26.037Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:29.212Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:29.219Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:52.769Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:55.168Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:00:55.175Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:01:17.434Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T02:01:19.336Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:01:19.342Z'
+}
+{
+  message: 'Requête reçue de ::1 : GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T02:01:57.348Z'
+}
+{
+  host: 'localhost:5000',
+  'user-agent': 'curl/7.55.1',
+  accept: '*/*',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:01:57.350Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : GET /health',
+  level: 'debug',
+  timestamp: '2024-12-26T02:10:50.143Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'upgrade-insecure-requests': '1',
+  accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Mobile/15E148 Safari/604.1',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  connection: 'keep-alive',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:10:50.170Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:11:48.326Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '118',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:11:48.332Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:24:40.435Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '118',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:24:40.473Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-26T02:25:10.580Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:25:57.758Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '115',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:25:57.759Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 98550000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-26T02:26:27.769Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:27:48.295Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:28:12.472Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '115',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:28:12.475Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:28:57.714Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T02:29:01.221Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T02:29:01.226Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:29:45.964Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '115',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:29:45.967Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Error 🔥 Cet email est déjà utilisé',
+  stack: 'Error: Cet email est déjà utilisé\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\auth.controller.ts:34:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-26T02:29:46.189Z'
+}
+{
+  message: 'Requête reçue de 192.168.8.86 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T02:30:07.793Z'
+}
+{
+  host: '192.168.8.197:5000',
+  'content-type': 'application/json',
+  connection: 'keep-alive',
+  accept: 'application/json',
+  'user-agent': 'Expo/1017647 CFNetwork/1568.200.51 Darwin/24.1.0',
+  'content-length': '114',
+  'accept-language': 'fr-FR,fr;q=0.9',
+  'accept-encoding': 'gzip, deflate',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T02:30:07.794Z'
+}

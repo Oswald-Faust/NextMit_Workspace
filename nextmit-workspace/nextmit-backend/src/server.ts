@@ -14,31 +14,28 @@ import adminRoutes from './routes/admin.routes';
 
 const app = express();
 
-// Middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  
-  // Handle preflight requests
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    return res.status(200).json({});
-  }
-  next();
-});
-
-app.use(cors({
+const corsOptions = {
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
   credentials: true
-}));
+};
 
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.listen(config.port, '0.0.0.0', () => {
+  logger.info(`Server running in ${config.nodeEnv} mode on port ${config.port}`);
+});
+
+app.use((req, _res, next) => {
+  logger.debug(`Requête reçue de ${req.ip} : ${req.method} ${req.url}`);
+  logger.debug('Headers:', req.headers);
+  next();
+});
 
 // API Routes
 app.use(`${config.api.prefix}/auth`, authRoutes);
@@ -46,12 +43,12 @@ app.use(`${config.api.prefix}/events`, eventRoutes);
 app.use(`${config.api.prefix}/admin`, adminRoutes);
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/health', (_req: express.Request, res: express.Response) => {
   res.status(200).json({ status: 'OK' });
 });
 
 // Test endpoint
-app.get('/test', (req, res) => {
+app.get('/test', (_req: express.Request, res: express.Response) => {
   res.json({ message: 'Backend accessible' });
 });
 
@@ -59,7 +56,7 @@ app.get('/test', (req, res) => {
 app.use(errorHandler);
 
 // Handle 404
-app.use((req, res) => {
+app.use((_req: express.Request, res: express.Response) => {
   res.status(404).json({
     success: false,
     message: 'Route not found'

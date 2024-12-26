@@ -17,38 +17,26 @@ export class AppError extends Error {
 }
 
 export const errorHandler = (
-  err: AppError,
-  req: Request,
+  error: AppError,
+  _req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) => {
-  err.statusCode = err.statusCode || 500;
-  err.status = err.status || 'error';
+  error.statusCode = error.statusCode || 500;
+  error.status = error.status || 'error';
 
-  if (process.env.NODE_ENV === 'development') {
-    logger.error('Error 🔥', err);
+  logger.error({
+    statusCode: error.statusCode,
+    status: error.status,
+    isOperational: error.isOperational,
+    message: `Error 🔥 ${error.message}`,
+    stack: error.stack
+  });
 
-    res.status(err.statusCode).json({
-      status: err.status,
-      error: err,
-      message: err.message,
-      stack: err.stack,
-    });
-  } else {
-    // Production
-    if (err.isOperational) {
-      res.status(err.statusCode).json({
-        status: err.status,
-        message: err.message,
-      });
-    } else {
-      // Programming or other unknown error
-      logger.error('ERROR 🔥', err);
-
-      res.status(500).json({
-        status: 'error',
-        message: 'Une erreur est survenue',
-      });
-    }
-  }
+  res.status(error.statusCode).json({
+    success: false,
+    status: error.status,
+    message: error.message,
+    ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+  });
 }; 

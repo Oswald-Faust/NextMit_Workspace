@@ -65,39 +65,25 @@ export class AuthController {
     
     logger.debug('Données reçues:', { email, password });
 
-    // Validation basique
-    if (!email || !password) {
-      logger.debug('Données manquantes:', { email: !!email, password: !!password });
-      return res.status(400).json({
-        success: false,
-        message: 'Email et mot de passe requis'
-      });
-    }
+    // Vérifier si l'utilisateur existe
+    const user = await User.findOne({ email });
+    logger.debug('Utilisateur trouvé:', { email: user?.email, hasPassword: !!user?.password });
 
-    // Trouver l'utilisateur
-    const user = await User.findOne({ email }).select('+password');
-    
     if (!user) {
-      logger.debug('Utilisateur non trouvé:', email);
-      return res.status(401).json({
-        success: false,
-        message: 'Email ou mot de passe incorrect'
-      });
+      throw new AppError('Email ou mot de passe incorrect', 401);
     }
 
     // Vérifier le mot de passe
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
+    const isPasswordValid = await user.comparePassword(password);
+    logger.debug('Résultat comparaison mot de passe:', isPasswordValid);
+
+    if (!isPasswordValid) {
       logger.debug('Mot de passe incorrect pour:', email);
-      return res.status(401).json({
-        success: false,
-        message: 'Email ou mot de passe incorrect'
-      });
+      throw new AppError('Email ou mot de passe incorrect', 401);
     }
 
     // Générer le token
     const token = this.generateToken(user._id, user.role);
-
     logger.debug('Connexion réussie pour:', email);
 
     res.status(200).json({
@@ -105,10 +91,10 @@ export class AuthController {
       token,
       user: {
         id: user._id,
-        email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
-        role: user.role,
+        email: user.email,
+        role: user.role
       }
     });
   });
