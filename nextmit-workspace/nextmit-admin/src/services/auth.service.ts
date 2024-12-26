@@ -18,26 +18,78 @@ export interface User {
 class AuthService {
   private tokenKey = 'auth_token';
   private userKey = 'user_data';
+  private adminKey = 'is_admin';
+  private static instance: AuthService;
+
+  constructor() {
+    // Initialiser les headers d'Axios au démarrage
+    this.initializeAxiosHeaders();
+  }
+
+  private initializeAxiosHeaders() {
+    const token = this.getToken();
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      // Ajouter un header spécial pour l'admin
+      if (this.isAdmin()) {
+        axios.defaults.headers.common['X-Admin-Access'] = process.env.NEXT_PUBLIC_ADMIN_SECRET || 'admin-secret';
+      }
+    }
+  }
 
   async login(credentials: LoginCredentials) {
     try {
+      // Si c'est l'admin avec les credentials spécifiques
+      if (credentials.email === 'faustfrank@icloud.com' && 
+          credentials.password === 'writer55') {
+        this.setAdminHeaders();
+        const adminUser = {
+          id: 'admin',
+          email: credentials.email, 
+          role: 'admin',
+          name: 'Administrateur'
+        };
+        
+        localStorage.setItem(this.userKey, JSON.stringify(adminUser));
+        Cookies.set(this.adminKey, 'true', { expires: 365 });
+        
+        return adminUser;
+      }
+
+      // Pour les utilisateurs normaux, continuer avec le JWT
       const response = await axios.post(`${API_URL}/auth/login`, credentials);
       const { token, user } = response.data;
       
       if (!token || !user) {
         throw new Error('Réponse de connexion invalide');
       }
-      
-      // Utiliser les cookies au lieu du localStorage
-      Cookies.set(this.tokenKey, token, { expires: 7 }); // expire dans 7 jours
+
+      Cookies.set(this.tokenKey, token);
       localStorage.setItem(this.userKey, JSON.stringify(user));
-      
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       
       return user;
-    } catch (error: any) {
-      console.error('Erreur de connexion:', error.response?.data || error.message);
-      throw new Error(error.response?.data?.message || 'Échec de la connexion');
+    } catch (error) {
+      console.error('Erreur de connexion:', error);
+      throw error;
+    }
+  }
+
+  isAdmin(): boolean {
+    return Cookies.get(this.adminKey) === 'true';
+  }
+
+  // Méthode pour récupérer les utilisateurs avec gestion admin
+  async getUsers() {
+    try {
+      if (this.isAdmin()) {
+        this.setAdminHeaders();
+      }
+      const response = await axios.get(`${API_URL}/admin/users`);
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors de la récupération des utilisateurs:', error);
+      throw error;
     }
   }
 
@@ -46,10 +98,34 @@ class AuthService {
     return !!token;
   }
 
-  logout() {
-    Cookies.remove(this.tokenKey);
-    localStorage.removeItem(this.userKey);
-    delete axios.defaults.headers.common['Authorization'];
+  async logout(): Promise<void> {
+    try {
+      const token = Cookies.get(this.tokenKey);
+      
+      if (token) {
+        await axios.post(`${API_URL}/auth/logout`, {}, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+      }
+      
+      // Nettoyage complet
+      Cookies.remove(this.tokenKey);
+      localStorage.removeItem(this.userKey);
+      delete axios.defaults.headers.common['Authorization'];
+      
+      // Forcer la redirection vers login
+      window.location.href = '/login';
+      
+    } catch (error) {
+      console.error('Erreur lors de la déconnexion:', error);
+      // Nettoyage même en cas d'erreur
+      Cookies.remove(this.tokenKey);
+      localStorage.removeItem(this.userKey);
+      delete axios.defaults.headers.common['Authorization'];
+      window.location.href = '/login';
+    }
   }
 
   getToken(): string | null {
@@ -104,6 +180,12 @@ class AuthService {
       console.error('Error updating profile:', error);
       throw error;
     }
+  }
+
+  private setAdminHeaders() {
+    const credentials = 'faustfrank@icloud.com:writer55';
+    const encodedCredentials = btoa(credentials);
+    axios.defaults.headers.common['Authorization'] = `Basic ${encodedCredentials}`;
   }
 }
 

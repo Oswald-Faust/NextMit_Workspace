@@ -30,18 +30,25 @@ export interface User {
 
 // Types événement
 export interface Event {
-  id: string;
+  _id?: string;
   title: string;
   description: string;
-  startDate: string;
-  endDate: string;
-  location: string;
+  date: Date;
+  location: {
+    address: string;
+    city: string;
+    coordinates?: [number, number];
+  };
+  image?: string;
+  organizer: string;
+  vendors: string[];
+  advertisements: string[];
   capacity: number;
   price: number;
-  imageUrl?: string;
+  category: string;
   status: 'draft' | 'published' | 'cancelled';
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 // Types ticket

@@ -1,35 +1,65 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { userService } from '@/services/user.service';
-import { User, UserFilters } from '@/types/api';
-import { toast } from '@/components/ui/use-toast';
 import { Card } from '@/components/ui/card';
-import { Search, Filter, Edit, Trash, Eye } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Search, Filter, Edit, Trash2, Eye } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from '@/components/ui/use-toast';
+import axios from 'axios';
+
+interface User {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  status: 'active' | 'inactive' | 'banned';
+  createdAt: string;
+}
 
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState<UserFilters>({});
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
   useEffect(() => {
     loadUsers();
-  }, [filters]);
+  }, []);
 
   const loadUsers = async () => {
     try {
       setLoading(true);
-      const response = await userService.getUsers(filters);
-      if (response.success) {
-        setUsers(response.data.items);
+      const token = localStorage.getItem('accessToken');
+      
+      if (!token) {
+        throw new Error('Token non trouvé');
+      }
+
+      const response = await axios.get('http://localhost:5000/api/v1/admin/users', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.data.success) {
+        setUsers(response.data.data.items);
       }
     } catch (error) {
+      console.error('Erreur détaillée:', error);
       toast({
         title: "Erreur",
-        description: "Impossible de charger les utilisateurs",
+        description: error.response?.data?.message || "Impossible de charger les utilisateurs",
         variant: "destructive",
       });
     } finally {
@@ -37,20 +67,32 @@ export default function UsersPage() {
     }
   };
 
-  const handleStatusUpdate = async (userId: string, status: string) => {
+  const handleStatusUpdate = async (userId: string, newStatus: string) => {
     try {
-      const response = await userService.updateUser(userId, { status });
-      if (response.success) {
+      const token = localStorage.getItem('token');
+      
+      const response = await axios.patch(
+        `http://localhost:5000/api/v1/admin/users/${userId}`, 
+        { status: newStatus },
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      
+      if (response.data.success) {
         toast({
           title: "Succès",
-          description: "Le statut a été mis à jour",
+          description: "Statut mis à jour avec succès",
         });
         loadUsers();
       }
     } catch (error) {
       toast({
         title: "Erreur",
-        description: "Impossible de mettre à jour le statut",
+        description: error.response?.data?.message || "Impossible de mettre à jour le statut",
         variant: "destructive",
       });
     }
@@ -68,132 +110,76 @@ export default function UsersPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
-          Utilisateurs
-        </h1>
+        <h1 className="text-2xl font-semibold">Utilisateurs</h1>
       </div>
 
-      <Card className="p-6">
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
-          <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Rechercher un utilisateur..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 w-full rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <Filter className="text-gray-400 h-5 w-5" />
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="rounded-md border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
-            >
-              <option value="all">Tous les statuts</option>
-              <option value="active">Actif</option>
-              <option value="inactive">Inactif</option>
-            </select>
-          </div>
+      <div className="flex gap-4 items-center">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Input
+            placeholder="Rechercher un utilisateur..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10"
+          />
         </div>
+        <Select value={statusFilter} onValueChange={setStatusFilter}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Filtrer par statut" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous</SelectItem>
+            <SelectItem value="active">Actif</SelectItem>
+            <SelectItem value="inactive">Inactif</SelectItem>
+            <SelectItem value="banned">Banni</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-            <thead>
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Utilisateur
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Contact
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Statut
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Événements
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Total dépensé
-                </th>
-                <th className="relative px-6 py-3">
-                  <span className="sr-only">Actions</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-              {filteredUsers.map((user) => (
-                <tr key={user.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <img
-                        src={user.avatar}
-                        alt={`${user.firstName} ${user.lastName}`}
-                        className="h-10 w-10 rounded-full"
-                      />
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900 dark:text-white">
-                          {user.firstName} {user.lastName}
-                        </div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
-                          Inscrit le{' '}
-                          {new Date(user.createdAt).toLocaleDateString('fr-FR')}
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900 dark:text-white">
-                      {user.email}
-                    </div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
-                      {user.phone}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                        user.status === 'active'
-                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                          : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
-                      }`}
-                    >
-                      {user.status === 'active' ? 'Actif' : 'Inactif'}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                    {user.eventsAttended} événements
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                    {user.totalSpent.toLocaleString('fr-FR', {
-                      style: 'currency',
-                      currency: 'EUR',
-                    })}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <div className="flex justify-end gap-2">
-                      <Link
-                        href={`/dashboard/users/${user.id}`}
-                        className="text-primary hover:text-primary/90"
-                      >
-                        <Eye className="h-5 w-5" />
-                      </Link>
-                      <button className="text-primary hover:text-primary/90">
-                        <Edit className="h-5 w-5" />
-                      </button>
-                      <button className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
-                        <Trash className="h-5 w-5" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {loading ? (
+        <div className="text-center">Chargement...</div>
+      ) : (
+        <div className="grid gap-4">
+          {filteredUsers.map((user) => (
+            <Card key={user._id} className="p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-medium">
+                    {user.firstName} {user.lastName}
+                  </h3>
+                  <p className="text-sm text-gray-500">{user.email}</p>
+                  <p className="text-sm text-gray-500">{user.phone}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Link href={`/dashboard/users/${user._id}`}>
+                    <Button variant="outline" size="sm">
+                      <Eye className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href={`/dashboard/users/${user._id}/edit`}>
+                    <Button variant="outline" size="sm">
+                      <Edit className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Select
+                    value={user.status}
+                    onValueChange={(value) => handleStatusUpdate(user._id, value)}
+                  >
+                    <SelectTrigger className="w-[120px]">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="active">Actif</SelectItem>
+                      <SelectItem value="inactive">Inactif</SelectItem>
+                      <SelectItem value="banned">Banni</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </Card>
+          ))}
         </div>
-      </Card>
+      )}
     </div>
   );
 } 

@@ -3,61 +3,100 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { eventService } from '@/services/event.service';
-import { toast } from '@/components/ui/use-toast';
+import * as z from 'zod';
 import { Event } from '@/types/api';
 import { Upload, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { eventService } from '@/services/event.service';
+import { toast } from '@/components/ui/use-toast';
+
+const eventSchema = z.object({
+  title: z.string().min(1, 'Le titre est requis'),
+  description: z.string().min(1, 'La description est requise'),
+  startDate: z.string().min(1, 'La date de début est requise'),
+  endDate: z.string().min(1, 'La date de fin est requise'),
+  address: z.string().min(1, 'L\'adresse est requise'),
+  city: z.string().min(1, 'La ville est requise'),
+  capacity: z.number().min(1, 'La capacité doit être supérieure à 0'),
+  price: z.number().min(0, 'Le prix ne peut pas être négatif'),
+  type: z.string().min(1, 'Le type est requis'),
+  status: z.enum(['draft', 'published', 'cancelled']).default('draft'),
+  image: z.any().optional()
+});
 
 export function EventForm({ event, onSuccess }: { event?: Event; onSuccess: () => void }) {
   const [loading, setLoading] = useState(false);
 
   const form = useForm({
-    defaultValues: event || {
-      title: '',
-      description: '',
-      location: '',
-      startDate: '',
-      endDate: '',
-      price: 0,
-      capacity: 0,
-      type: '',
-      status: 'draft'
+    resolver: zodResolver(eventSchema),
+    defaultValues: {
+      title: event?.title || '',
+      description: event?.description || '',
+      startDate: event?.startDate ? new Date(event.startDate).toISOString().slice(0, 16) : '',
+      endDate: event?.endDate ? new Date(event.endDate).toISOString().slice(0, 16) : '',
+      address: event?.location?.address || '',
+      city: event?.location?.city || '',
+      capacity: event?.capacity || 0,
+      price: event?.price || 0,
+      type: event?.type || '',
+      status: event?.status || 'draft'
     }
   });
 
   const onSubmit = async (data: any) => {
     try {
       setLoading(true);
+      
+      // Vérifier le token avant la soumission
+      const token = localStorage.getItem('accessToken');
+      if (!token) {
+        toast({
+          title: "Erreur",
+          description: "Vous devez être connecté pour créer un événement",
+          variant: "destructive",
+        });
+        return;
+      }
+
       const formData = new FormData();
       
-      Object.keys(data).forEach(key => {
-        if (key === 'image' && data[key][0]) {
-          formData.append(key, data[key][0]);
-        } else {
-          formData.append(key, data[key]);
-        }
+      // Ajout des données au FormData
+      const eventData = {
+        title: data.title,
+        description: data.description,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        location: {
+          address: data.address,
+          city: data.city
+        },
+        capacity: Number(data.capacity),
+        price: Number(data.price),
+        type: data.type,
+        status: data.status
+      };
+
+      Object.entries(eventData).forEach(([key, value]) => {
+        formData.append(key, typeof value === 'object' ? JSON.stringify(value) : value);
       });
 
-      const response = event 
-        ? await eventService.updateEvent(event._id, formData)
-        : await eventService.createEvent(formData);
+      if (data.image?.[0]) {
+        formData.append('image', data.image[0]);
+      }
+
+      console.log('Token utilisé:', token); // Pour déboguer
+      const response = await eventService.createEvent(formData);
 
       if (response.success) {
-        toast({
-          title: "Succès",
-          description: event 
-            ? "L'événement a été mis à jour"
-            : "L'événement a été créé",
-        });
         onSuccess();
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Erreur complète:', error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue",
+        description: error.response?.data?.message || "Une erreur est survenue",
         variant: "destructive",
       });
     } finally {
@@ -129,6 +168,23 @@ export function EventForm({ event, onSuccess }: { event?: Event; onSuccess: () =
 
         <div className="grid grid-cols-2 gap-4">
           <div>
+            <label className="block text-sm font-medium mb-1">Adresse</label>
+            <Input {...form.register('address')} />
+            {form.formState.errors.address && (
+              <p className="text-sm text-red-500 mt-1">{form.formState.errors.address.message}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Ville</label>
+            <Input {...form.register('city')} />
+            {form.formState.errors.city && (
+              <p className="text-sm text-red-500 mt-1">{form.formState.errors.city.message}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
             <label className="block text-sm font-medium mb-1">Prix (€)</label>
             <Input
               type="number"
@@ -150,14 +206,6 @@ export function EventForm({ event, onSuccess }: { event?: Event; onSuccess: () =
               <p className="text-sm text-red-500 mt-1">{form.formState.errors.capacity.message}</p>
             )}
           </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1">Lieu</label>
-          <Input {...form.register('location')} />
-          {form.formState.errors.location && (
-            <p className="text-sm text-red-500 mt-1">{form.formState.errors.location.message}</p>
-          )}
         </div>
 
         <div>

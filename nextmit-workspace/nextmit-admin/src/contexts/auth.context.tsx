@@ -10,6 +10,7 @@ import {
 import { useRouter } from 'next/navigation';
 import { authService, User } from '@/services/auth.service';
 import { useToast } from '@/components/ui/use-toast';
+import axios from 'axios';
 
 interface AuthContextType {
   user: User | null;
@@ -36,10 +37,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string) => {
     try {
-      const userData = await authService.login({ email, password });
-      setUser(userData);
-      setIsAuthenticated(true);
-      router.push('/dashboard');
+      const response = await axios.post('http://localhost:5000/api/v1/auth/login', {
+        email,
+        password
+      });
+
+      if (response.data.success) {
+        localStorage.setItem('accessToken', response.data.token);
+        const userData = await authService.login({ email, password });
+        setUser(userData);
+        setIsAuthenticated(true);
+        router.push('/dashboard');
+      }
     } catch (error) {
       console.error('Erreur de connexion:', error);
       throw error;
