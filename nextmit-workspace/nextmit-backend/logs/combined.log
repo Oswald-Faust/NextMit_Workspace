@@ -43057,3 +43057,1121 @@
   message: 'Headers:',
   timestamp: '2024-12-26T15:53:09.298Z'
 }
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T21:26:40.876Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T21:48:48.175Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T21:48:50.574Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T21:48:50.579Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T21:49:27.616Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '115',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:49:27.618Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T21:50:21.851Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '117',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:50:21.853Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T21:50:29.907Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '119',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:50:29.908Z'
+}
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Error 🔥 Cet email est déjà utilisé',
+  stack: 'Error: Cet email est déjà utilisé\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\auth.controller.ts:34:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-26T21:50:30.101Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-26T21:51:30.885Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '58',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:51:30.887Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-26T21:51:30.897Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-26T21:51:31.066Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-26T21:51:31.196Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-26T21:51:31.200Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-26T21:53:17.703Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '58',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:53:17.704Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-26T21:53:17.707Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-26T21:53:17.955Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-26T21:53:18.073Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-26T21:53:18.075Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T21:53:39.272Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-26T21:53:44.893Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-26T21:53:44.903Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-26T21:53:58.207Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '58',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:53:58.209Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-26T21:53:58.215Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-26T21:53:58.425Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-26T21:53:58.570Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-26T21:53:58.575Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register/manager',
+  level: 'debug',
+  timestamp: '2024-12-26T21:56:34.861Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '111',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:56:34.865Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-26T21:58:20.406Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '126',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:58:20.407Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-26T21:58:44.103Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T21:58:44.104Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-26T21:58:44.108Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-26T21:58:44.309Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-26T21:58:44.479Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-26T21:58:44.488Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-26T22:02:13.823Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-26T22:02:13.824Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-26T22:02:13.827Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-26T22:02:14.273Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-26T22:02:14.393Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-26T22:02:14.395Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T09:04:16.705Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T09:12:00.575Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T09:12:06.546Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T09:12:06.550Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T09:39:07.935Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:39:07.938Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T09:39:07.943Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T09:39:08.112Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T09:39:08.234Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T09:39:08.248Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T09:39:32.630Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:39:32.631Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T09:39:32.634Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T09:39:32.789Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T09:39:32.894Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T09:39:32.896Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/register',
+  level: 'debug',
+  timestamp: '2024-12-27T09:41:57.644Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '92',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:41:57.645Z'
+}
+{
+  message: 'Requête reçue de ::1 : PUT /api/v1/users/undefined/promote',
+  level: 'debug',
+  timestamp: '2024-12-27T09:41:58.314Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '18',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZlNzY2NWM4NmFhYzM3MGQ0ZjRlMzciLCJyb2xlIjoidXNlciIsImlhdCI6MTczNTI5MjUxOCwiZXhwIjoxNzM1Mzc4OTE4fQ.nOEd71tCITiqroLFX8XTH8Ylsw7xvb95lNB5kdDD-0E',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:41:58.325Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T09:44:31.554Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:44:31.554Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T09:44:31.556Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T09:44:31.704Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T09:44:31.830Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T09:44:31.834Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T09:45:42.709Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '48',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T09:45:42.710Z'
+}
+{
+  email: 'wiw@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T09:45:42.730Z'
+}
+{
+  email: 'wiw@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T09:45:42.896Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T09:45:43.114Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T09:45:43.116Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T10:05:16.360Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T10:05:18.496Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T10:05:18.503Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T11:10:57.849Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T11:10:59.843Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T11:10:59.848Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T11:57:02.457Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '55',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json, text/plain, */*',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T11:57:02.691Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T11:57:02.742Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T11:57:03.315Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T11:57:03.748Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T11:57:03.907Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T11:57:23.190Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '55',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json, text/plain, */*',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T11:57:23.191Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T11:57:23.194Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T11:57:23.336Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T11:57:23.482Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T11:57:23.493Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T12:09:42.899Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '55',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json, text/plain, */*',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T12:09:42.938Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T12:09:42.994Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T12:09:43.612Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T12:09:43.784Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T12:09:43.947Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T12:10:10.834Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '55',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json, text/plain, */*',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T12:10:10.840Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T12:10:10.855Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T12:10:10.994Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T12:10:11.159Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T12:10:11.161Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T12:12:53.613Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T12:12:55.966Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T12:12:55.972Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T12:15:18.635Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '55',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  accept: 'application/json, text/plain, */*',
+  'content-type': 'application/json',
+  'sec-ch-ua-mobile': '?0',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform': '"Windows"',
+  origin: 'http://localhost:3000',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T12:15:18.641Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T12:15:18.648Z'
+}
+{
+  email: 'faustfrank@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T12:15:18.860Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T12:15:19.109Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T12:15:19.123Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T12:25:44.827Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T12:25:51.491Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T12:25:51.497Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T13:00:14.542Z'
+}
+{
+  message: 'MongoDB Connected...',
+  level: 'info',
+  timestamp: '2024-12-27T13:00:16.423Z'
+}
+{
+  message: 'Server running in development mode on port 5000',
+  level: 'info',
+  timestamp: '2024-12-27T13:00:16.430Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T13:14:03.044Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '58',
+  accept: 'application/json',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
+  'content-type': 'application/json',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T13:14:03.068Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T13:14:03.106Z'
+}
+{
+  email: 'faust.troukou@icloud.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T13:14:03.370Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T13:14:03.574Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T13:14:03.601Z'
+}
+{
+  message: 'Requête reçue de ::1 : POST /api/v1/auth/login',
+  level: 'debug',
+  timestamp: '2024-12-27T13:14:25.931Z'
+}
+{
+  host: 'localhost:5000',
+  connection: 'keep-alive',
+  'content-length': '52',
+  accept: 'application/json',
+  'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
+  'content-type': 'application/json',
+  origin: 'http://localhost:19006',
+  'sec-fetch-site': 'same-site',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-dest': 'empty',
+  referer: 'http://localhost:19006/',
+  'accept-encoding': 'gzip, deflate, br, zstd',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8',
+  level: 'debug',
+  message: 'Headers:',
+  timestamp: '2024-12-27T13:14:25.932Z'
+}
+{
+  email: 'faust370@gmail.com',
+  password: 'writer55',
+  level: 'debug',
+  message: 'Données reçues:',
+  timestamp: '2024-12-27T13:14:25.945Z'
+}
+{
+  email: 'faust370@gmail.com',
+  hasPassword: true,
+  level: 'debug',
+  message: 'Utilisateur trouvé:',
+  timestamp: '2024-12-27T13:14:26.097Z'
+}
+{
+  level: 'debug',
+  message: 'Résultat comparaison mot de passe:',
+  timestamp: '2024-12-27T13:14:26.239Z'
+}
+{
+  level: 'debug',
+  message: 'Connexion réussie pour:',
+  timestamp: '2024-12-27T13:14:26.241Z'
+}

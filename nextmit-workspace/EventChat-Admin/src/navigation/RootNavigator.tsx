@@ -4,22 +4,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './types';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
-import OnboardingScreen from '../screens/OnboardingScreen';
 import { useAuth } from '../contexts/AuthContext';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
-  const { isAuthenticated, hasSeenOnboarding } = useAuth();
+  const { userToken } = useAuth();
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {!hasSeenOnboarding && (
-          <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        )}
-        {!isAuthenticated ? (
-          <Stack.Screen name="Auth" component={AuthStack} />
+        {!userToken ? (
+          <>
+            <Stack.Screen name="Login" component={AuthStack} />
+            <Stack.Screen name="Register" component={AuthStack} />
+          </>
         ) : (
           <Stack.Screen name="Main" component={MainStack} />
         )}

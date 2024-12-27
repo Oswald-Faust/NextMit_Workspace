@@ -11513,3 +11513,14 @@
   level: 'error',
   timestamp: '2024-12-26T15:23:40.524Z'
 }
+{
+  statusCode: 400,
+  status: 'fail',
+  isOperational: true,
+  message: 'Error 🔥 Cet email est déjà utilisé',
+  stack: 'Error: Cet email est déjà utilisé\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\auth.controller.ts:34:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-26T21:50:30.101Z'
+}

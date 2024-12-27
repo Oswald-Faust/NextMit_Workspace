@@ -1,57 +1,62 @@
 import { createTheme } from '@shopify/restyle';
 
 const palette = {
-  purple: '#8A2BE2',
-  deepPurple: '#9400D3',
-  white: '#FFFFFF',
-  black: '#000000',
-  darkGray: '#1A1A1A',
-  gray: '#333333',
-  lightGray: '#666666',
+  purple: '#5A31F4',
+  white: '#FFF',
+  black: '#111',
+  darkGray: '#333',
+  gray: '#666',
+  lightGray: '#EEE',
+  red: '#FF0058',
+  green: '#00C851',
 };
 
-const theme = createTheme({
+export const theme = createTheme({
   colors: {
-    primary: palette.purple,
-    secondary: palette.deepPurple,
-    background: palette.black,
-    foreground: palette.white,
-    inputBackground: palette.darkGray,
-    border: palette.gray,
-    text: palette.white,
-    textSecondary: palette.lightGray,
+    primary: '#9ACD32',
+    secondary: '#FF8C00',
+    background: '#FFFFFF',
+    foreground: '#F7F7F7',
+    text: '#1A1A1A',
+    textSecondary: '#757575',
+    inputBackground: '#F0F0F0',
+    error: '#FF4444',
+    success: '#4CAF50',
+    white: '#FFFFFF',
+    cardPrimary: '#F8F9FA',
   },
   spacing: {
-    xs: 4,
     s: 8,
     m: 16,
     l: 24,
-    xl: 32,
-    xxl: 48,
-  },
-  borderRadii: {
-    s: 8,
-    m: 16,
-    l: 25,
-    xl: 32,
+    xl: 40,
   },
   textVariants: {
     header: {
-      fontSize: 32,
       fontWeight: 'bold',
-      color: 'text',
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: '600',
-      color: 'text',
+      fontSize: 34,
     },
     body: {
       fontSize: 16,
-      color: 'text',
+      lineHeight: 24,
     },
+  },
+  breakpoints: {
+    phone: 0,
+    tablet: 768,
   },
 });
 
 export type Theme = typeof theme;
-export default theme;
+
+export const darkTheme: Theme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    background: palette.black,
+    foreground: palette.white,
+    text: palette.white,
+    textSecondary: palette.lightGray,
+    inputBackground: palette.darkGray,
+  },
+};

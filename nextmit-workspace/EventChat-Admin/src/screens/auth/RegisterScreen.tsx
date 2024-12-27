@@ -5,54 +5,62 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  Image,
   ScrollView,
   ActivityIndicator,
   Platform
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@shopify/restyle';
+import { Ionicons } from '@expo/vector-icons';
 import { Theme } from '../../theme';
 import { useAuth } from '../../contexts/AuthContext';
 import CustomToast from '../../components/CustomToast';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { AuthStackParamList } from '../../navigation/types';
 
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  phone: string;
+type RegisterScreenProps = {
+  navigation: NativeStackNavigationProp<AuthStackParamList, 'Register'>;
 };
 
 const API_URL = Platform.select({
-  ios: __DEV__ ? 'http://localhost:5000/api/v1' : 'https://api.nextmit.com/api/v1',
-  android: __DEV__ ? 'http://10.0.2.2:5000/api/v1' : 'https://api.nextmit.com/api/v1',
+  android: __DEV__ 
+    ? 'http://192.168.8.197:5000/api/v1'  // Votre IP Wi-Fi
+    : 'http://localhost:5000/api/v1',
+  ios: __DEV__
+    ? 'http://192.168.8.197:5000/api/v1'  // Même IP
+    : 'http://localhost:5000/api/v1',
+  default: 'http://localhost:5000/api/v1'
 });
 
-const RegisterScreen = ({ navigation }) => {
+
+const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
   const theme = useTheme<Theme>();
-  const { signUp } = useAuth();
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
+  const { signUp, isAuthorized } = useAuth();
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
-    phone: ''
+    showPassword: false,
+    showConfirmPassword: false
   });
-  const [toast, setToast] = useState({ visible: false, message: '', type: 'error' });
+  const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({
+    visible: false,
+    message: '',
+    type: 'error' as 'error' | 'success'
+  });
 
-  const showToast = (message: string, type = 'error') => {
+  const showToast = (message: string, type: 'error' | 'success' = 'error') => {
     setToast({ visible: true, message, type });
   };
 
   const handleRegister = async () => {
-    // Validation du formulaire
-    if (!formData.firstName || !formData.lastName || !formData.email || 
-        !formData.password || !formData.confirmPassword) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
       showToast('Veuillez remplir tous les champs obligatoires');
       return;
     }
@@ -81,12 +89,12 @@ const RegisterScreen = ({ navigation }) => {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          firstName: formData.firstName.trim(),
-          lastName: formData.lastName.trim(),
           email: formData.email.toLowerCase().trim(),
           password: formData.password.trim(),
-          phone: formData.phone.trim(),
-          role: 'client' // On force le rôle client
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim(),
+          role: 'manager',
+          isVerified: true
         })
       });
 
@@ -96,8 +104,17 @@ const RegisterScreen = ({ navigation }) => {
         throw new Error(data.message || 'Erreur lors de l\'inscription');
       }
 
-      await signUp(data.token);
-      navigation.navigate('Main');
+      if (data.user?.role !== 'manager') {
+        throw new Error('Erreur lors de la création du compte manager. Veuillez contacter l\'administrateur.');
+      }
+
+      await signUp(data.token, data.user);
+      showToast('Compte manager créé avec succès !', 'success');
+
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Main' }],
+      });
 
     } catch (error) {
       showToast(error instanceof Error ? error.message : 'Une erreur est survenue');
@@ -108,8 +125,135 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        {/* Contenu du formulaire */}
+      <CustomToast 
+        visible={toast.visible}
+        message={toast.message}
+        type={toast.type}
+        onHide={() => setToast(prev => ({ ...prev, visible: false }))}
+      />
+
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
+      </TouchableOpacity>
+
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        
+        <Text style={[styles.title, { color: theme.colors.text }]}>
+          Inscription Manager
+        </Text>
+
+        <View style={styles.nameContainer}>
+          <TextInput
+            style={[
+              styles.input,
+              { width: '48%', backgroundColor: theme.colors.inputBackground }
+            ]}
+            placeholder="Prénom"
+            placeholderTextColor={theme.colors.textSecondary}
+            value={formData.firstName}
+            onChangeText={(text) => setFormData({ ...formData, firstName: text })}
+          />
+          <TextInput
+            style={[
+              styles.input,
+              { width: '48%', backgroundColor: theme.colors.inputBackground }
+            ]}
+            placeholder="Nom"
+            placeholderTextColor={theme.colors.textSecondary}
+            value={formData.lastName}
+            onChangeText={(text) => setFormData({ ...formData, lastName: text })}
+          />
+        </View>
+
+        <TextInput
+          style={[styles.input, { backgroundColor: theme.colors.inputBackground }]}
+          placeholder="Email"
+          placeholderTextColor={theme.colors.textSecondary}
+          value={formData.email}
+          onChangeText={(text) => setFormData({ ...formData, email: text })}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={[styles.input, { backgroundColor: theme.colors.inputBackground }]}
+            placeholder="Mot de passe"
+            placeholderTextColor={theme.colors.textSecondary}
+            secureTextEntry={!formData.showPassword}
+            value={formData.password}
+            onChangeText={(text) => setFormData({ ...formData, password: text })}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={() => setFormData({ ...formData, showPassword: !formData.showPassword })}
+          >
+            <Ionicons 
+              name={formData.showPassword ? "eye-off" : "eye"} 
+              size={24} 
+              color={theme.colors.textSecondary}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={[styles.input, { backgroundColor: theme.colors.inputBackground }]}
+            placeholder="Confirmer le mot de passe"
+            placeholderTextColor={theme.colors.textSecondary}
+            secureTextEntry={!formData.showConfirmPassword}
+            value={formData.confirmPassword}
+            onChangeText={(text) => setFormData({ ...formData, confirmPassword: text })}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={() => setFormData({ ...formData, showConfirmPassword: !formData.showConfirmPassword })}
+          >
+            <Ionicons 
+              name={formData.showConfirmPassword ? "eye-off" : "eye"} 
+              size={24} 
+              color={theme.colors.textSecondary}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity 
+          style={styles.registerButton}
+          onPress={handleRegister}
+          disabled={loading}
+        >
+          <LinearGradient
+            colors={[theme.colors.primary, theme.colors.secondary]}
+            style={styles.gradient}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            {loading ? (
+              <ActivityIndicator color={theme.colors.text} />
+            ) : (
+              <Text style={[styles.registerButtonText, { color: theme.colors.text }]}>
+                S'inscrire
+              </Text>
+            )}
+          </LinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.loginLink}
+          onPress={() => navigation.navigate('Login')}
+        >
+          <Text style={[styles.loginLinkText, { color: theme.colors.textSecondary }]}>
+            Déjà un compte ? Connectez-vous
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -119,11 +263,71 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 1,
+  },
   scrollContent: {
     padding: 20,
+    paddingTop: 60,
+  },
+  logo: {
+    width: 150,
+    height: 150,
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 15,
+  },
+  input: {
+    height: 50,
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    marginBottom: 15,
+  },
+  passwordContainer: {
+    position: 'relative',
+    width: '100%',
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 20,
+    top: 12,
+  },
+  registerButton: {
+    width: '100%',
+    height: 50,
+    borderRadius: 25,
+    overflow: 'hidden',
+    marginTop: 20,
+  },
+  gradient: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  // ... autres styles
+  registerButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  loginLink: {
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  loginLinkText: {
+    fontSize: 14,
+  },
 });
 
 export default RegisterScreen;
