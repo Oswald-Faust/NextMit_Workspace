@@ -11524,3 +11524,1132 @@
   level: 'error',
   timestamp: '2024-12-26T21:50:30.101Z'
 }
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:00:47.095Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:00:47.271Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:14:52.619Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:14:52.788Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-27T14:34:56.358Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-27T14:35:17.886Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n',
+  stack: 'MongoServerSelectionError: 304D0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1586:SSL alert number 80\n' +
+    '\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2024-12-27T14:35:45.936Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Topology is closed',
+  stack: 'MongoTopologyClosedError: Topology is closed\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:491:42\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:35:53.393Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:38:08.470Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2024-12-27T14:38:08.631Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:56:24.069Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:56:24.406Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:57:29.310Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:57:29.646Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:57:31.364Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T14:57:31.674Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T15:00:31.300Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.',
+  stack: 'StrictPopulateError: Cannot populate path `tickets` because it is not in your schema. Set the `strictPopulate` option to false to override.\n' +
+    '    at getModelsMapForPopulate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\helpers\\populate\\getModelsMapForPopulate.js:50:12)\n' +
+    '    at populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4394:21)\n' +
+    '    at _populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4354:5)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4326:5\n' +
+    '    at new Promise (<anonymous>)\n' +
+    '    at Function.populate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\model.js:4325:10)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2521:11\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:3164:21\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2024-12-27T15:00:31.605Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T14:51:04.199Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T14:51:04.370Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:328:13)',
+  level: 'error',
+  timestamp: '2025-01-07T16:04:51.073Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:47:12)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\express\\lib\\router\\index.js:328:13)',
+  level: 'error',
+  timestamp: '2025-01-07T16:04:51.132Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Event validation failed: category: Path `category` is required., location.city: Path `location.city` is required., location.address: Path `location.address` is required., date: Path `date` is required.',
+  stack: 'ValidationError: Event validation failed: category: Path `category` is required., location.city: Path `location.city` is required., location.address: Path `location.address` is required., date: Path `date` is required.\n' +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T16:22:36.072Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T16:28:52.924Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T16:29:17.155Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T17:53:22.863Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T17:53:38.692Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T17:57:02.903Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T17:59:15.035Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: "Error 🔥 Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise",
+  stack: "ValidationError: Event validation failed: location.city: La ville est requise, location.address: L'adresse est requise\n" +
+    '    at model.Document.invalidate (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  level: 'error',
+  timestamp: '2025-01-07T18:00:58.703Z'
+}
+{
+  address: 'cluster0-shard-00-02.r7fcj.mongodb.net:27017',
+  level: 'error',
+  message: 'Erreur lors de la récupération des statistiques: Connection pool for cluster0-shard-00-02.r7fcj.mongodb.net:27017 was cleared because another operation failed with: "connection 9 to 35.181.124.19:27017 timed out"',
+  stack: 'MongoPoolClearedError: Connection pool for cluster0-shard-00-02.r7fcj.mongodb.net:27017 was cleared because another operation failed with: "connection 9 to 35.181.124.19:27017 timed out"\n' +
+    '    at ConnectionPool.processWaitQueue (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\cmap\\connection_pool.ts:829:65)\n' +
+    '    at ConnectionPool.clear (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\cmap\\connection_pool.ts:473:10)\n' +
+    '    at updateServers (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:795:21)\n' +
+    '    at Topology.serverUpdateHandler (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:643:5)\n' +
+    '    at Server.<anonymous> (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:771:66)\n' +
+    '    at Server.emit (node:events:519:28)\n' +
+    '    at Server.emit (node:domain:488:12)\n' +
+    '    at markServerUnknown (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\server.ts:467:10)\n' +
+    '    at Server.handleError (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\server.ts:409:9)\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\server.ts:366:18',
+  timestamp: '2025-01-07T20:08:58.520Z',
+  [Symbol(errorLabels)]: Set(1) { 'RetryableWriteError' }
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T20:11:11.368Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T20:11:21.397Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:35:27.074Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:35:27.292Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:36:20.737Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "categories" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:36:21.331Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "planning" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "planning" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:36:24.684Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 Cast to ObjectId failed for value "planning" (type string) at path "_id" for model "Event"',
+  stack: 'CastError: Cast to ObjectId failed for value "planning" (type string) at path "_id" for model "Event"\n' +
+    '    at ObjectId.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schema\\objectid.js:250:11)\n' +
+    '    at ObjectId.SchemaType.applySetters (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1219:12)\n' +
+    '    at ObjectId.SchemaType.castForQuery (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\schematype.js:1633:15)\n' +
+    '    at cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\cast.js:389:32)\n' +
+    '    at model.Query.Query.cast (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4927:12)\n' +
+    '    at model.Query.Query._castConditions (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2237:10)\n' +
+    '    at model.Query._findOne (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:2533:8)\n' +
+    '    at model.Query.exec (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongoose\\lib\\query.js:4447:28)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at async C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\controllers\\event.controller.ts:25:19',
+  level: 'error',
+  timestamp: '2025-01-07T20:36:24.874Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:31:27.171Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:31:43.931Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:31:44.125Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:31:44.130Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:31:44.319Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:32:39.636Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:32:39.878Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:33:23.079Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:33:23.264Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:33:33.926Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:33:34.563Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:34:22.270Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:34:54.948Z'
+}
+{
+  statusCode: 500,
+  status: 'error',
+  isOperational: undefined,
+  message: 'Error 🔥 connection <monitor> to 13.37.163.85:27017 timed out',
+  stack: 'MongoServerSelectionError: connection <monitor> to 13.37.163.85:27017 timed out\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:567:30)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at processTimers (node:internal/timers:514:7)',
+  level: 'error',
+  timestamp: '2025-01-07T21:35:06.811Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:36:33.248Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:36:33.506Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:06.798Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:07.048Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:10.756Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:10.986Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:11.176Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:66:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:37:11.422Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:56:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:39:03.518Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:56:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:39:03.780Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:56:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:39:36.491Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:56:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:39:36.819Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:24.290Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:24.533Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:54.124Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:54.886Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:59.439Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:59.688Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:40:59.831Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:41:00.081Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:12.837Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:13.796Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:20.264Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:20.518Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:24.434Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:24.664Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:32.060Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:42:32.277Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:46:30.960Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:46:31.224Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:47:31.581Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:47:31.814Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:48:49.985Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:130:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:48:50.227Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:50:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:50:58.717Z'
+}
+{
+  statusCode: 401,
+  status: 'error',
+  isOperational: true,
+  message: 'Error 🔥 Token invalide ou expiré',
+  stack: 'Error: Token invalide ou expiré\n' +
+    '    at C:\\Users\\Oswald Faust\\nextmit_app\\nextmit-workspace\\nextmit-backend\\src\\middleware\\auth.ts:50:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  level: 'error',
+  timestamp: '2025-01-07T21:50:58.964Z'
+}

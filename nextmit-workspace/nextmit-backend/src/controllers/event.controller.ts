@@ -11,38 +11,61 @@ export class EventController {
 
   getEvents = catchAsync(async (req: Request, res: Response) => {
     const events = await this.eventService.queryEvents(req.query);
+    const eventsWithFullImageUrls = events.map(event => ({
+      ...event.toObject(),
+      image: event.image ? `/api/v1/${event.image}` : null
+    }));
     res.json({
       success: true,
-      data: events
+      data: eventsWithFullImageUrls
     });
   });
 
   getEvent = catchAsync(async (req: Request, res: Response) => {
     const event = await this.eventService.getEventById(req.params.eventId);
+    const eventWithFullImageUrl = {
+      ...event.toObject(),
+      image: event.image ? `/api/v1/${event.image}` : null
+    };
     res.json({
       success: true,
-      data: event
+      data: eventWithFullImageUrl
     });
   });
 
   createEvent = catchAsync(async (req: Request, res: Response) => {
+    const location = typeof req.body.location === 'string' 
+      ? JSON.parse(req.body.location)
+      : req.body.location;
+
     const eventData = {
       ...req.body,
+      location,
       organizer: req.user.id,
-      ...(req.file && { image: req.file.path })
+      ...(req.file && { image: `uploads/events/${req.file.filename}` })
     };
 
     const event = await this.eventService.createEvent(eventData);
+    const eventWithFullImageUrl = {
+      ...event.toObject(),
+      image: event.image ? `/api/v1/${event.image}` : null
+    };
+    
     res.status(201).json({
       success: true,
-      data: event
+      data: eventWithFullImageUrl
     });
   });
 
   updateEvent = catchAsync(async (req: Request, res: Response) => {
+    const location = typeof req.body.location === 'string' 
+      ? JSON.parse(req.body.location)
+      : req.body.location;
+
     const eventData = {
       ...req.body,
-      ...(req.file && { image: req.file.path })
+      location,
+      ...(req.file && { image: `uploads/events/${req.file.filename}` })
     };
 
     const event = await this.eventService.updateEvent(
@@ -51,9 +74,14 @@ export class EventController {
       req.user
     );
 
+    const eventWithFullImageUrl = {
+      ...event.toObject(),
+      image: event.image ? `/api/v1/${event.image}` : null
+    };
+
     res.json({
       success: true,
-      data: event
+      data: eventWithFullImageUrl
     });
   });
 
@@ -100,4 +128,4 @@ export class EventController {
       data: event
     });
   });
-} 
+}

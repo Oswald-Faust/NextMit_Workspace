@@ -1,44 +1,62 @@
 import { Router } from 'express';
 import { auth } from '../middleware/auth';
 import { AdminController } from '../controllers/admin.controller';
+import { EventController } from '../controllers/event.controller';
+import multer from 'multer';
+import { userValidation } from '../validations/user.validation';
 
 const router = Router();
-const controller = new AdminController();
+const adminController = new AdminController();
+const eventController = new EventController();
+
+// Configuration de multer pour l'upload d'images
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/events/');
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + '-' + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
 
 // Protéger toutes les routes admin avec le middleware auth et le rôle admin
-router.use(auth(['admin']));
 
 // Routes du dashboard
-router.get('/dashboard/stats', controller.getDashboardStats);
-//router.get('/dashboard/recent-activities', controller.getRecentActivities);
+router.get('/dashboard/stats', adminController.getDashboardStats);
+//router.get('/dashboard/recent-activities', adminController.getRecentActivities);
 
 // Gestion des utilisateurs
-router.get('/users', controller.getUsers);
-router.get('/users/:userId', controller.getUser);
-router.patch('/users/:userId', controller.updateUser);
-router.delete('/users/:userId', controller.deleteUser);
+router.get('/users', adminController.getUsers);
+router.post('/users', userValidation.createUser, adminController.createUser);
+router.get('/users/:userId', adminController.getUser);
+router.patch('/users/:userId', userValidation.updateUser, adminController.updateUser);
+router.delete('/users/:userId', adminController.deleteUser);
 
 // Gestion des événements
-router.get('/events', controller.getEvents);
-router.get('/events/:eventId', controller.getEvent);
-router.patch('/events/:eventId', controller.updateEvent);
-router.delete('/events/:eventId', controller.deleteEvent);
+router.post('/events', upload.single('image'), eventController.createEvent);
+router.get('/events', eventController.getEvents);
+router.get('/events/:eventId', eventController.getEvent);
+router.patch('/events/:eventId', upload.single('image'), eventController.updateEvent);
+router.delete('/events/:eventId', eventController.deleteEvent);
 
 // Gestion des vendeurs
-router.get('/vendors', controller.getVendors);
-router.get('/vendors/:vendorId', controller.getVendor);
-router.patch('/vendors/:vendorId', controller.updateVendor);
-router.delete('/vendors/:vendorId', controller.deleteVendor);
+router.get('/vendors', adminController.getVendors);
+router.get('/vendors/:vendorId', adminController.getVendor);
+router.patch('/vendors/:vendorId', adminController.updateVendor);
+router.delete('/vendors/:vendorId', adminController.deleteVendor);
 
 // Gestion des stories
-router.get('/stories', controller.getStories);
-router.get('/stories/:storyId', controller.getStory);
-router.delete('/stories/:storyId', controller.deleteStory);
+router.get('/stories', adminController.getStories);
+router.get('/stories/:storyId', adminController.getStory);
+router.delete('/stories/:storyId', adminController.deleteStory);
 
 // Gestion des publicités
-router.get('/advertisements', controller.getAdvertisements);
-router.get('/advertisements/:adId', controller.getAdvertisement);
-router.patch('/advertisements/:adId', controller.updateAdvertisement);
-router.delete('/advertisements/:adId', controller.deleteAdvertisement);
+router.get('/advertisements', adminController.getAdvertisements);
+router.get('/advertisements/:adId', adminController.getAdvertisement);
+router.patch('/advertisements/:adId', adminController.updateAdvertisement);
+router.delete('/advertisements/:adId', adminController.deleteAdvertisement);
 
-export default router; 
+export default router;

@@ -41,7 +41,25 @@ export class EventService {
   }
 
   async createEvent(eventData: any) {
-    return Event.create(eventData);
+    // Traitement des données du formulaire
+    const processedData = {
+      title: eventData.title,
+      description: eventData.description,
+      startDate: new Date(eventData.startDate),
+      endDate: new Date(eventData.endDate),
+      location: {
+        address: eventData.address,
+        city: eventData.city
+      },
+      capacity: Number(eventData.capacity),
+      price: Number(eventData.price),
+      type: eventData.type,
+      status: eventData.status || 'draft',
+      organizer: eventData.organizer || eventData.createdBy,
+      image: eventData.image
+    };
+
+    return Event.create(processedData);
   }
 
   async updateEvent(eventId: string, eventData: any, user: IUser) {
@@ -51,14 +69,32 @@ export class EventService {
       throw new ApiError(404, 'Event not found');
     }
 
-    if (event.organizer.toString() !== user.id && user.role !== 'admin') {
+    // Vérifier si l'utilisateur est l'organisateur ou un admin
+    if (!event.organizer.equals(user._id) && user.role !== 'admin') {
       throw new ApiError(403, 'Not authorized to update this event');
     }
 
-    Object.assign(event, eventData);
-    await event.save();
+    // Traitement des données du formulaire
+    const processedData = {
+      title: eventData.title,
+      description: eventData.description,
+      startDate: eventData.startDate ? new Date(eventData.startDate) : event.startDate,
+      endDate: eventData.endDate ? new Date(eventData.endDate) : event.endDate,
+      location: {
+        address: eventData.address || event.location.address,
+        city: eventData.city || event.location.city
+      },
+      capacity: eventData.capacity ? Number(eventData.capacity) : event.capacity,
+      price: eventData.price ? Number(eventData.price) : event.price,
+      type: eventData.type || event.type,
+      status: eventData.status || event.status,
+      ...(eventData.image && { image: eventData.image })
+    };
 
-    return event;
+    return Event.findByIdAndUpdate(eventId, processedData, {
+      new: true,
+      runValidators: true
+    });
   }
 
   async deleteEvent(eventId: string, user: IUser) {
@@ -68,7 +104,8 @@ export class EventService {
       throw new ApiError(404, 'Event not found');
     }
 
-    if (event.organizer.toString() !== user.id && user.role !== 'admin') {
+    // Vérifier si l'utilisateur est l'organisateur ou un admin
+    if (!event.organizer.equals(user._id) && user.role !== 'admin') {
       throw new ApiError(403, 'Not authorized to delete this event');
     }
 
@@ -77,44 +114,35 @@ export class EventService {
 
   async addVendor(eventId: string, vendorId: string, user: IUser) {
     const event = await Event.findById(eventId);
+
     if (!event) {
-      throw new ApiError(404, 'Événement non trouvé');
+      throw new ApiError(404, 'Event not found');
     }
 
-    // Vérifier les permissions
-    if (event.organizer.toString() !== user.id && user.role !== 'admin') {
-      throw new ApiError(403, 'Non autorisé à modifier cet événement');
+    if (!event.organizer.equals(user._id) && user.role !== 'admin') {
+      throw new ApiError(403, 'Not authorized to add vendors to this event');
     }
 
-    const vendorObjectId = new Types.ObjectId(vendorId);
-
-    // Vérifier si le vendeur est déjà ajouté
-    if (event.vendors.some(v => v.toString() === vendorObjectId.toString())) {
-      throw new ApiError(400, 'Ce vendeur est déjà ajouté à l\'événement');
+    if (!event.vendors.includes(new Types.ObjectId(vendorId))) {
+      event.vendors.push(new Types.ObjectId(vendorId));
+      await event.save();
     }
-
-    event.vendors.push(vendorObjectId);
-    await event.save();
 
     return event;
   }
 
   async removeVendor(eventId: string, vendorId: string, user: IUser) {
     const event = await Event.findById(eventId);
+
     if (!event) {
-      throw new ApiError(404, 'Événement non trouvé');
+      throw new ApiError(404, 'Event not found');
     }
 
-    // Vérifier les permissions
-    if (event.organizer.toString() !== user.id && user.role !== 'admin') {
-      throw new ApiError(403, 'Non autorisé à modifier cet événement');
+    if (!event.organizer.equals(user._id) && user.role !== 'admin') {
+      throw new ApiError(403, 'Not authorized to remove vendors from this event');
     }
 
-    const vendorObjectId = new Types.ObjectId(vendorId);
-    event.vendors = event.vendors.filter(
-      v => v.toString() !== vendorObjectId.toString()
-    );
-    
+    event.vendors = event.vendors.filter(id => !id.equals(vendorId));
     await event.save();
 
     return event;
@@ -145,4 +173,4 @@ export class EventService {
 
     return event;
   }
-} 
+}

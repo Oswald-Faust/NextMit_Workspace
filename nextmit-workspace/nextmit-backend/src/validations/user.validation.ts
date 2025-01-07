@@ -2,6 +2,89 @@ import { check } from 'express-validator';
 import { validateResults } from '../middleware/validate';
 
 export const userValidation = {
+  createUser: [
+    check('firstName')
+      .trim()
+      .notEmpty()
+      .withMessage('Le prénom est requis')
+      .isLength({ min: 2 })
+      .withMessage('Le prénom doit contenir au moins 2 caractères'),
+
+    check('lastName')
+      .trim()
+      .notEmpty()
+      .withMessage('Le nom est requis')
+      .isLength({ min: 2 })
+      .withMessage('Le nom doit contenir au moins 2 caractères'),
+
+    check('email')
+      .trim()
+      .notEmpty()
+      .withMessage('L\'email est requis')
+      .isEmail()
+      .withMessage('Email invalide'),
+
+    check('password')
+      .trim()
+      .notEmpty()
+      .withMessage('Le mot de passe est requis')
+      .isLength({ min: 8 })
+      .withMessage('Le mot de passe doit contenir au moins 8 caractères'),
+
+    check('role')
+      .trim()
+      .notEmpty()
+      .withMessage('Le rôle est requis')
+      .isIn(['user', 'admin', 'manager', 'super_admin'])
+      .withMessage('Rôle invalide'),
+
+    check('phone')
+      .optional()
+      .trim()
+      .matches(/^(\+\d{1,3}[- ]?)?\d{10}$/)
+      .withMessage('Numéro de téléphone invalide'),
+
+    validateResults,
+  ],
+
+  updateUser: [
+    check('userId')
+      .isMongoId()
+      .withMessage('ID utilisateur invalide'),
+
+    check('firstName')
+      .optional()
+      .trim()
+      .isLength({ min: 2 })
+      .withMessage('Le prénom doit contenir au moins 2 caractères'),
+
+    check('lastName')
+      .optional()
+      .trim()
+      .isLength({ min: 2 })
+      .withMessage('Le nom doit contenir au moins 2 caractères'),
+
+    check('email')
+      .optional()
+      .trim()
+      .isEmail()
+      .withMessage('Email invalide')
+      .normalizeEmail(),
+
+    check('role')
+      .optional()
+      .trim()
+      .isIn(['user', 'admin', 'manager', 'super_admin'])
+      .withMessage('Rôle invalide'),
+
+    check('isActive')
+      .optional()
+      .isBoolean()
+      .withMessage('isActive doit être un booléen'),
+
+    validateResults,
+  ],
+
   updateProfile: [
     check('firstName')
       .optional()
@@ -74,7 +157,7 @@ export const userValidation = {
 
     check('role')
       .optional()
-      .isIn(['user', 'admin', 'manager'])
+      .isIn(['user', 'admin', 'manager', 'super_admin'])
       .withMessage('Rôle invalide'),
 
     validateResults,
@@ -88,43 +171,6 @@ export const userValidation = {
     validateResults,
   ],
 
-  updateUser: [
-    check('userId')
-      .isMongoId()
-      .withMessage('ID utilisateur invalide'),
-
-    check('firstName')
-      .optional()
-      .trim()
-      .isLength({ min: 2 })
-      .withMessage('Le prénom doit contenir au moins 2 caractères'),
-
-    check('lastName')
-      .optional()
-      .trim()
-      .isLength({ min: 2 })
-      .withMessage('Le nom doit contenir au moins 2 caractères'),
-
-    check('email')
-      .optional()
-      .trim()
-      .isEmail()
-      .withMessage('Email invalide')
-      .normalizeEmail(),
-
-    check('role')
-      .optional()
-      .isIn(['user', 'admin', 'manager'])
-      .withMessage('Rôle invalide'),
-
-    check('isActive')
-      .optional()
-      .isBoolean()
-      .withMessage('isActive doit être un booléen'),
-
-    validateResults,
-  ],
-
   deleteUser: [
     check('userId')
       .isMongoId()
@@ -132,4 +178,4 @@ export const userValidation = {
 
     validateResults,
   ],
-}; 
+};

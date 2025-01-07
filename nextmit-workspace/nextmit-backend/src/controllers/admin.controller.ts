@@ -8,6 +8,7 @@ import { logger } from '../config/logger';
 import { catchAsync } from '../utils/catchAsync';
 import { Story } from '../models/Story';
 import { Advertisement } from '../models/Advertisement';
+import bcrypt from 'bcryptjs';
 
 export class AdminController {
   async getDashboardStats(req: Request, res: Response) {
@@ -185,11 +186,7 @@ export class AdminController {
 
   getUser = catchAsync(async (req: Request, res: Response) => {
     const user = await User.findById(req.params.userId)
-      .select('-password')
-      .populate({
-        path: 'tickets',
-        select: 'eventId status purchaseDate quantity price'
-      });
+      .select('-password');
 
     if (!user) {
       throw new AppError('Utilisateur non trouvé', 404);
@@ -198,101 +195,83 @@ export class AdminController {
     res.status(200).json({
       success: true,
       data: user
+    });
+  });
+
+  createUser = catchAsync(async (req: Request, res: Response) => {
+    const { firstName, lastName, email, password, role, phone } = req.body;
+
+    // Vérifier si l'email existe déjà
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: 'Cet email est déjà utilisé'
+      });
+    }
+
+    // Hasher le mot de passe
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Créer le nouvel utilisateur
+    const user = await User.create({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+      role,
+      phone
+    });
+
+    // Retourner l'utilisateur sans le mot de passe
+    const userWithoutPassword = await User.findById(user._id).select('-password');
+
+    res.status(201).json({
+      success: true,
+      data: userWithoutPassword
     });
   });
 
   updateUser = catchAsync(async (req: Request, res: Response) => {
-    const allowedUpdates = ['firstName', 'lastName', 'email', 'phone', 'role', 'isVerified'];
-    const updates = Object.keys(req.body);
-    
-    const isValidOperation = updates.every(update => allowedUpdates.includes(update));
-    
-    if (!isValidOperation) {
-      throw new AppError('Certains champs de mise à jour ne sont pas autorisés', 400);
-    }
+    const { role } = req.body;
+    const userId = req.params.userId;
 
-    const user = await User.findById(req.params.userId);
-    
+    const user = await User.findById(userId);
     if (!user) {
-      throw new AppError('Utilisateur non trouvé', 404);
+      return res.status(404).json({
+        success: false,
+        message: 'Utilisateur non trouvé'
+      });
     }
 
-    if (user.role === 'super_admin' && (req.user as IUser).role !== 'super_admin') {
-      throw new AppError('Vous n\'avez pas l\'autorisation de modifier un super admin', 403);
-    }
-
-    updates.forEach(update => {
-      if (allowedUpdates.includes(update)) {
-        (user as any)[update] = req.body[update];
-      }
-    });
-
+    // Mettre à jour uniquement le rôle
+    user.role = role;
     await user.save();
 
-    res.status(200).json({
+    const updatedUser = await User.findById(userId).select('-password');
+
+    res.json({
       success: true,
-      data: user
+      data: updatedUser
     });
   });
 
   deleteUser = catchAsync(async (req: Request, res: Response) => {
-    const user = await User.findById(req.params.userId);
-
+    const user = await User.findByIdAndDelete(req.params.userId);
+    
     if (!user) {
-      throw new AppError('Utilisateur non trouvé', 404);
+      return res.status(404).json({
+        success: false,
+        message: 'Utilisateur non trouvé'
+      });
     }
 
-    if (user.role === 'super_admin') {
-      throw new AppError('Impossible de supprimer un super admin', 403);
-    }
-
-    const hasTickets = await Ticket.exists({ userId: user._id });
-    const hasEvents = await Event.exists({ organizer: user._id });
-
-    if (hasTickets || hasEvents) {
-      throw new AppError(
-        'Impossible de supprimer cet utilisateur car il a des tickets ou des événements associés',
-        400
-      );
-    }
-
-    await user.deleteOne();
-
-    res.status(200).json({
+    res.json({
       success: true,
       message: 'Utilisateur supprimé avec succès'
     });
   });
-
-  async updateUserRole(req: Request, res: Response) {
-    try {
-      const { role } = req.body;
-
-      // Vérifier que le rôle est valide
-      const validRoles = ['user', 'admin', 'organizer'];
-      if (!validRoles.includes(role)) {
-        throw new AppError('Rôle invalide', 400);
-      }
-
-      const user = await User.findByIdAndUpdate(
-        req.params.id,
-        { role },
-        { new: true, runValidators: true }
-      ).select('-password');
-
-      if (!user) {
-        throw new AppError('Utilisateur non trouvé', 404);
-      }
-
-      res.status(200).json({
-        success: true,
-        data: user,
-      });
-    } catch (error) {
-      logger.error('Erreur lors de la mise à jour du rôle:', error);
-      throw new AppError('Erreur lors de la mise à jour du rôle', 500);
-    }
-  }
 
   // Gestion des événements
   getEvents = catchAsync(async (req: Request, res: Response) => {
@@ -655,4 +634,4 @@ export class AdminController {
       message: 'Publicité supprimée avec succès'
     });
   });
-} 
+}
